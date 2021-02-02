@@ -1,5 +1,5 @@
 # Your name here
-name: 'World'
+name: 'Varshith'
 # (-) is replaced by name, and there can only be one (-)
 # Also, if greeting is too big for your screen, you can change it in the CSS[0]
 greeting: 'Hello (-)!'
@@ -9,7 +9,7 @@ nameConstant: '(-)'
 # If you want to use a different search engine, specify it here
 # Options: DuckDuckGo, Google and Bing.
 # You can use a custom url, usually its https://<Search Engine Name (lowercase)>.com/search
-searchEngine: 'Bing'
+searchEngine: 'Google'
 # Here you can customize the css
 # You need all of these, do not remove any
 # Change only the ones you want to change and do not edit anything else

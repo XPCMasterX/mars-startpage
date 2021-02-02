@@ -6,7 +6,18 @@ To install, see [installation](#Installation)
 
 ### Installation
 
-Set up github pages and point the root directory to `public/build`.
+Dependencies: Node.js and npm
+
+1. Clone this repo
+2. Run the following commands
+
+```bash
+cd mars-startpage
+npm install
+npm run dev
+```
+
+5. Now, set your default homepage to `localhost:5000`.
 
 ### Screenshots
 
