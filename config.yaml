@@ -14,7 +14,9 @@ searchEngine: 'Bing'
 # You need all of these, do not remove any
 # Change only the ones you want to change and do not edit anything else
 css:
+    # Gradient colours are the ones on the text and search bar
     gradient-start: '#ff005d'
     gradient-end: '#ff8b26'
+    # For greeting
     text-font-size: '150px'
     background-color: '#181b1e'
