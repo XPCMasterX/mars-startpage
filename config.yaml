@@ -10,3 +10,11 @@ nameConstant: '(-)'
 # Options: DuckDuckGo, Google and Bing.
 # You can use a custom url, usually its https://<Search Engine Name (lowercase)>.com/search
 searchEngine: 'Bing'
+# Here you can customize the css
+# You need all of these, do not remove any
+# Change only the ones you want to change and do not edit anything else
+css:
+    gradient-start: '#ff005d'
+    gradient-end: '#ff8b26'
+    text-font-size: '150px'
+    background-color: '#181b1e'
