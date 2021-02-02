@@ -14,16 +14,11 @@
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "@rollup/plugin-json": "^4.1.0",
-    "gradient-path": "^2.1.0",
-    "rollup-plugin-json5": "^1.0.0",
     "sirv-cli": "^1.0.0",
-    "tinygradient": "^1.1.2",
     "yaml": "^1.10.0"
   }
 }
