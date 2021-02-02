@@ -1,8 +1,8 @@
 # Your name here
-name: 'Varshith A'
+name: 'World'
 # (-) is replaced by name, and there can only be one (-)
 # Also, if greeting is too big for your screen, you can change it in the CSS[0]
-greeting: 'Hey (-)!'
+greeting: 'Hello (-)!'
 # If you don't want to use (-) you can change that too, but you need to
 # use this instead of (-) in welcome
 nameConstant: '(-)'

@@ -97,7 +97,7 @@
 	  border: none;
 	  padding: 1rem;
 	  position: relative;
-	  background: linear-gradient(to right, #ff005d, #ff8b26);
+	  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
 	  padding: 3px;
 	  display: inline-block;
 	}
