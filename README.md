@@ -12,4 +12,4 @@ Different Gradient with a different greeting.
 
 ### Configurable
 
-There's three places to configure it: `public/global.css` (to set your background colour), `src/App.svelte` (see `:root` in `<style />`) and in `config.yaml`.
+All available configuration options are in `config.yaml`.
