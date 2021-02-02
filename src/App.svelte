@@ -1,6 +1,10 @@
 <script>
 	import config from '../config.yaml';
 	import { onMount } from 'svelte';
+	import Options from './lib/Options.svelte';
+
+
+	let visible = false;
 
 	function evalWelcome(string, nameConstant) {
 		return string.replace(nameConstant, config.name);
@@ -31,9 +35,13 @@
 		}
 	}
 
+	function toggleVisible() {
+		visible = visible === true ? false : true;
+	}
+
 	onMount(async () => {
 		loadCSSOptions();
-		document.body.style['background-color'] = getComputedStyle(document.documentElement).getPropertyValue('--background-color');	
+		document.body.style['background-image'] = 'url(./background.jpg)';
 	})
 
 </script>
@@ -106,6 +114,43 @@
 	  padding: 3px;
 	  display: inline-block;
 	}
+
+	img {
+		height: 32px;
+		width: 32px;
+
+		/* Vertically align it to the center */
+		padding-top: 8px;
+	}
+
+	.settings  {
+		/* Make it bigger than the icon */
+		height: 48px;
+		width: 48px;
+
+		/* Align the icon to the center */
+		text-align: center;
+
+		/* Position it at bottom left */
+		position: fixed;
+		bottom: 8px;
+		right: 8px;
+
+		/* Blur the background */
+		-webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.3);
+
+		/* Rounded corners */
+		border-radius: 10px;
+
+		/* Keep this here so it darkens and lightens nicely */
+		transition: 0.5s;
+	}
+
+	.settings:hover {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
 </style>
 
 
@@ -118,4 +163,16 @@
 					<input type="text" name="q" id="search"/>
 			</div>
 	</form>
+</div>
+
+
+
+{#if visible}
+	<Options />
+{/if}
+
+
+<!--Icons made by Freepik from www.flaticon.com-->
+<div class="settings">
+	<img src="./settings.svg" alt="Settings" on:click={toggleVisible}>
 </div>

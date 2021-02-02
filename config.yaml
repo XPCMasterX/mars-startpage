@@ -15,8 +15,8 @@ searchEngine: 'Google'
 # Change only the ones you want to change and do not edit anything else
 css:
     # Gradient colours are the ones on the text and search bar
-    gradient-start: '#ff005d'
-    gradient-end: '#ff8b26'
+    gradient-start: '#2600ff'
+    gradient-end: '#00ff26'
     # For greeting
     text-font-size: '150px'
     background-color: '#181b1e'
