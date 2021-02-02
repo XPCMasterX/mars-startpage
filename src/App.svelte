@@ -1,5 +1,6 @@
 <script>
 	import config from '../config.yaml';
+	import { onMount } from 'svelte';
 
 	function evalWelcome(string, nameConstant) {
 		return string.replace(nameConstant, config.name);
@@ -20,21 +21,25 @@
 				return searchEngine;
 		}
 	}
+
+	function loadCSSOptions() {
+		let root = document.documentElement;
+		let cssProperties = Object.entries(config.css);
+
+		for (const [key, value] of cssProperties) {
+			root.style.setProperty('--' + key, value.toString())
+		}
+	}
+
+	onMount(async () => {
+		loadCSSOptions();
+		document.body.style['background-color'] = getComputedStyle(document.documentElement).getPropertyValue('--background-color');	
+	})
+
 </script>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
-	/* Configure the colours here */
-	:root {
-		/* Colours */
-		--gradient-start: #ff005d;
-		--gradient-end: #ff8b26;
-		--background-color: #181b1e;
-
-		/* Sizes */
-		--text-font-size: 150px;
-	}
 
 	p {
 		font-family: Roboto;
