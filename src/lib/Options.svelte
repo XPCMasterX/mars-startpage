@@ -7,13 +7,13 @@
     $: root.style.setProperty('--blur-strength', blurSlider + 'px');
     $: console.log(blurSlider);
 
-    export let name, greeting, nameConstant;
+    export let name, greeting, nameConstant, searchEngine;
 </script>
 
 <div class="option-container" transition:fly={{ x: -350, opacity: 1 }}>
     <div class="option generalProportions">
         <div class="general">
-            <p>General</p>
+            <p><strong>General</strong></p>
             <div class="name">
                 <p for="name" id="name">Name:</p>
                 <input type="text" name="name" id="nameBox" bind:value={name} />
@@ -48,6 +48,25 @@
                     name="name"
                     id="nameConstant"
                     bind:value={nameConstant}
+                />
+            </div>
+            <div>
+                <p>
+                    If you want to use a different search engine, specify it
+                    here <br />
+                    Options: DuckDuckGo, Google and Bing. <br />
+                    You can use a custom url, usually its https://(Search Engine
+                    Name (lowercase)).com/search
+                </p>
+            </div>
+            <div class="name">
+                <p for="name" id="name">Search Engine:</p>
+                <input
+                    type="text"
+                    name="name"
+                    id="nameConstant"
+                    style="width: 7vw !important"
+                    bind:value={searchEngine}
                 />
             </div>
         </div>
@@ -164,7 +183,7 @@
     }
 
     .generalProportions {
-        height: 50vh;
+        height: 75vh;
         width: 20vw;
     }
 

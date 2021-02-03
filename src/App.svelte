@@ -5,7 +5,7 @@
 
     let config = JSON.parse(JSON.stringify(configOrig));
 
-    let visible = true;
+    let visible = false;
 
     function evalWelcome(string, nameConstant) {
         return string.replace(nameConstant, config.name);
@@ -51,10 +51,12 @@
 	*/
     let name = config.name,
         greeting = config.greeting,
-        nameConstant = config.nameConstant;
+        nameConstant = config.nameConstant,
+        searchEngine = config.searchEngine;
     $: config.name = name;
     $: config.greeting = greeting;
     $: config.nameConstant = nameConstant;
+    $: config.searchEngine = searchEngine;
 </script>
 
 <div>
@@ -69,11 +71,11 @@
     </form>
 </div>
 {#if visible}
-    <Options bind:name bind:greeting bind:nameConstant />
+    <Options bind:name bind:greeting bind:nameConstant bind:searchEngine />
 {/if}
 
 <!--Icons made by Freepik from www.flaticon.com-->
-<div class="settings" on:click={toggleVisible}>
+<div class="settings">
     <img src="./settings.svg" alt="Settings" on:click={toggleVisible} />
 </div>
 

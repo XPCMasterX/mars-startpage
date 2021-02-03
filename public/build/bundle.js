@@ -101,6 +101,9 @@ var app = (function () {
     function set_input_value(input, value) {
         input.value = value == null ? '' : value;
     }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
     function custom_event(type, detail) {
         const e = document.createEvent('CustomEvent');
         e.initCustomEvent(type, false, false, detail);
@@ -647,10 +650,11 @@ var app = (function () {
     const file = "src\\lib\\Options.svelte";
 
     function create_fragment(ctx) {
-    	let div9;
-    	let div6;
-    	let div5;
+    	let div11;
+    	let div8;
+    	let div7;
     	let p0;
+    	let strong;
     	let t1;
     	let div0;
     	let p1;
@@ -679,23 +683,37 @@ var app = (function () {
     	let t15;
     	let input2;
     	let t16;
-    	let div8;
-    	let div7;
+    	let div5;
     	let p6;
+    	let t17;
+    	let br2;
     	let t18;
+    	let br3;
+    	let t19;
+    	let t20;
+    	let div6;
+    	let p7;
+    	let t22;
     	let input3;
-    	let div9_transition;
+    	let t23;
+    	let div10;
+    	let div9;
+    	let p8;
+    	let t25;
+    	let input4;
+    	let div11_transition;
     	let current;
     	let mounted;
     	let dispose;
 
     	const block = {
     		c: function create() {
-    			div9 = element("div");
-    			div6 = element("div");
-    			div5 = element("div");
+    			div11 = element("div");
+    			div8 = element("div");
+    			div7 = element("div");
     			p0 = element("p");
-    			p0.textContent = "General";
+    			strong = element("strong");
+    			strong.textContent = "General";
     			t1 = space();
     			div0 = element("div");
     			p1 = element("p");
@@ -727,127 +745,174 @@ var app = (function () {
     			t15 = space();
     			input2 = element("input");
     			t16 = space();
-    			div8 = element("div");
-    			div7 = element("div");
+    			div5 = element("div");
     			p6 = element("p");
-    			p6.textContent = "Blur Strength:";
-    			t18 = space();
+    			t17 = text("If you want to use a different search engine, specify it\r\n                    here ");
+    			br2 = element("br");
+    			t18 = text("\r\n                    Options: DuckDuckGo, Google and Bing. ");
+    			br3 = element("br");
+    			t19 = text("\r\n                    You can use a custom url, usually its https://(Search Engine\r\n                    Name (lowercase)).com/search");
+    			t20 = space();
+    			div6 = element("div");
+    			p7 = element("p");
+    			p7.textContent = "Search Engine:";
+    			t22 = space();
     			input3 = element("input");
-    			add_location(p0, file, 15, 12, 453);
+    			t23 = space();
+    			div10 = element("div");
+    			div9 = element("div");
+    			p8 = element("p");
+    			p8.textContent = "Blur Strength:";
+    			t25 = space();
+    			input4 = element("input");
+    			add_location(strong, file, 15, 15, 470);
+    			add_location(p0, file, 15, 12, 467);
     			attr_dev(p1, "for", "name");
     			attr_dev(p1, "id", "name");
-    			attr_dev(p1, "class", "svelte-18ks2j8");
-    			add_location(p1, file, 17, 16, 517);
+    			attr_dev(p1, "class", "svelte-a4t92h");
+    			add_location(p1, file, 17, 16, 548);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "name", "name");
     			attr_dev(input0, "id", "nameBox");
-    			attr_dev(input0, "class", "svelte-18ks2j8");
-    			add_location(input0, file, 18, 16, 568);
+    			attr_dev(input0, "class", "svelte-a4t92h");
+    			add_location(input0, file, 18, 16, 599);
     			attr_dev(div0, "class", "name");
-    			add_location(div0, file, 16, 12, 481);
-    			add_location(br0, file, 22, 71, 765);
-    			add_location(p2, file, 21, 16, 689);
-    			add_location(div1, file, 20, 12, 666);
+    			add_location(div0, file, 16, 12, 512);
+    			add_location(br0, file, 22, 71, 796);
+    			add_location(p2, file, 21, 16, 720);
+    			add_location(div1, file, 20, 12, 697);
     			attr_dev(p3, "for", "name");
     			attr_dev(p3, "id", "name");
-    			attr_dev(p3, "class", "svelte-18ks2j8");
-    			add_location(p3, file, 28, 16, 981);
+    			attr_dev(p3, "class", "svelte-a4t92h");
+    			add_location(p3, file, 28, 16, 1012);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "name", "name");
     			attr_dev(input1, "id", "nameBox");
-    			attr_dev(input1, "class", "svelte-18ks2j8");
-    			add_location(input1, file, 29, 16, 1036);
+    			attr_dev(input1, "class", "svelte-a4t92h");
+    			add_location(input1, file, 29, 16, 1067);
     			attr_dev(div2, "class", "name");
-    			add_location(div2, file, 27, 12, 945);
-    			add_location(br1, file, 39, 28, 1376);
-    			add_location(p4, file, 37, 16, 1262);
-    			add_location(div3, file, 36, 12, 1239);
+    			add_location(div2, file, 27, 12, 976);
+    			add_location(br1, file, 39, 28, 1407);
+    			add_location(p4, file, 37, 16, 1293);
+    			add_location(div3, file, 36, 12, 1270);
     			attr_dev(p5, "for", "name");
     			attr_dev(p5, "id", "name");
-    			attr_dev(p5, "class", "svelte-18ks2j8");
-    			add_location(p5, file, 44, 16, 1528);
+    			attr_dev(p5, "class", "svelte-a4t92h");
+    			add_location(p5, file, 44, 16, 1559);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "name", "name");
     			attr_dev(input2, "id", "nameConstant");
-    			attr_dev(input2, "class", "svelte-18ks2j8");
-    			add_location(input2, file, 45, 16, 1588);
+    			attr_dev(input2, "class", "svelte-a4t92h");
+    			add_location(input2, file, 45, 16, 1619);
     			attr_dev(div4, "class", "name");
-    			add_location(div4, file, 43, 12, 1492);
-    			attr_dev(div5, "class", "general svelte-18ks2j8");
-    			add_location(div5, file, 14, 8, 418);
-    			attr_dev(div6, "class", "option generalProportions svelte-18ks2j8");
-    			add_location(div6, file, 13, 4, 369);
-    			attr_dev(p6, "for", "blurStrength");
-    			attr_dev(p6, "id", "blurStrengthLabel");
-    			attr_dev(p6, "class", "svelte-18ks2j8");
-    			add_location(p6, file, 56, 12, 1898);
-    			attr_dev(input3, "type", "range");
-    			attr_dev(input3, "min", "1");
-    			attr_dev(input3, "max", "100");
-    			attr_dev(input3, "id", "blurStrength");
-    			attr_dev(input3, "class", "svelte-18ks2j8");
-    			add_location(input3, file, 57, 12, 1975);
-    			attr_dev(div7, "class", "blur svelte-18ks2j8");
-    			add_location(div7, file, 55, 8, 1866);
-    			attr_dev(div8, "class", "option blurProportions svelte-18ks2j8");
-    			add_location(div8, file, 54, 4, 1820);
-    			attr_dev(div9, "class", "option-container svelte-18ks2j8");
-    			add_location(div9, file, 12, 0, 292);
+    			add_location(div4, file, 43, 12, 1523);
+    			add_location(br2, file, 55, 25, 1962);
+    			add_location(br3, file, 56, 58, 2028);
+    			add_location(p6, file, 53, 16, 1854);
+    			add_location(div5, file, 52, 12, 1831);
+    			attr_dev(p7, "for", "name");
+    			attr_dev(p7, "id", "name");
+    			attr_dev(p7, "class", "svelte-a4t92h");
+    			add_location(p7, file, 62, 16, 2258);
+    			attr_dev(input3, "type", "text");
+    			attr_dev(input3, "name", "name");
+    			attr_dev(input3, "id", "nameConstant");
+    			set_style(input3, "width", "7vw", 1);
+    			attr_dev(input3, "class", "svelte-a4t92h");
+    			add_location(input3, file, 63, 16, 2318);
+    			attr_dev(div6, "class", "name");
+    			add_location(div6, file, 61, 12, 2222);
+    			attr_dev(div7, "class", "general svelte-a4t92h");
+    			add_location(div7, file, 14, 8, 432);
+    			attr_dev(div8, "class", "option generalProportions svelte-a4t92h");
+    			add_location(div8, file, 13, 4, 383);
+    			attr_dev(p8, "for", "blurStrength");
+    			attr_dev(p8, "id", "blurStrengthLabel");
+    			attr_dev(p8, "class", "svelte-a4t92h");
+    			add_location(p8, file, 75, 12, 2679);
+    			attr_dev(input4, "type", "range");
+    			attr_dev(input4, "min", "1");
+    			attr_dev(input4, "max", "100");
+    			attr_dev(input4, "id", "blurStrength");
+    			attr_dev(input4, "class", "svelte-a4t92h");
+    			add_location(input4, file, 76, 12, 2756);
+    			attr_dev(div9, "class", "blur svelte-a4t92h");
+    			add_location(div9, file, 74, 8, 2647);
+    			attr_dev(div10, "class", "option blurProportions svelte-a4t92h");
+    			add_location(div10, file, 73, 4, 2601);
+    			attr_dev(div11, "class", "option-container svelte-a4t92h");
+    			add_location(div11, file, 12, 0, 306);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div9, anchor);
-    			append_dev(div9, div6);
-    			append_dev(div6, div5);
-    			append_dev(div5, p0);
-    			append_dev(div5, t1);
-    			append_dev(div5, div0);
+    			insert_dev(target, div11, anchor);
+    			append_dev(div11, div8);
+    			append_dev(div8, div7);
+    			append_dev(div7, p0);
+    			append_dev(p0, strong);
+    			append_dev(div7, t1);
+    			append_dev(div7, div0);
     			append_dev(div0, p1);
     			append_dev(div0, t3);
     			append_dev(div0, input0);
     			set_input_value(input0, /*name*/ ctx[0]);
-    			append_dev(div5, t4);
-    			append_dev(div5, div1);
+    			append_dev(div7, t4);
+    			append_dev(div7, div1);
     			append_dev(div1, p2);
     			append_dev(p2, t5);
     			append_dev(p2, br0);
     			append_dev(p2, t6);
-    			append_dev(div5, t7);
-    			append_dev(div5, div2);
+    			append_dev(div7, t7);
+    			append_dev(div7, div2);
     			append_dev(div2, p3);
     			append_dev(div2, t9);
     			append_dev(div2, input1);
     			set_input_value(input1, /*greeting*/ ctx[1]);
-    			append_dev(div5, t10);
-    			append_dev(div5, div3);
+    			append_dev(div7, t10);
+    			append_dev(div7, div3);
     			append_dev(div3, p4);
     			append_dev(p4, t11);
     			append_dev(p4, br1);
     			append_dev(p4, t12);
-    			append_dev(div5, t13);
-    			append_dev(div5, div4);
+    			append_dev(div7, t13);
+    			append_dev(div7, div4);
     			append_dev(div4, p5);
     			append_dev(div4, t15);
     			append_dev(div4, input2);
     			set_input_value(input2, /*nameConstant*/ ctx[2]);
-    			append_dev(div9, t16);
-    			append_dev(div9, div8);
-    			append_dev(div8, div7);
-    			append_dev(div7, p6);
-    			append_dev(div7, t18);
-    			append_dev(div7, input3);
-    			set_input_value(input3, /*blurSlider*/ ctx[3]);
+    			append_dev(div7, t16);
+    			append_dev(div7, div5);
+    			append_dev(div5, p6);
+    			append_dev(p6, t17);
+    			append_dev(p6, br2);
+    			append_dev(p6, t18);
+    			append_dev(p6, br3);
+    			append_dev(p6, t19);
+    			append_dev(div7, t20);
+    			append_dev(div7, div6);
+    			append_dev(div6, p7);
+    			append_dev(div6, t22);
+    			append_dev(div6, input3);
+    			set_input_value(input3, /*searchEngine*/ ctx[3]);
+    			append_dev(div11, t23);
+    			append_dev(div11, div10);
+    			append_dev(div10, div9);
+    			append_dev(div9, p8);
+    			append_dev(div9, t25);
+    			append_dev(div9, input4);
+    			set_input_value(input4, /*blurSlider*/ ctx[4]);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[4]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[5]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[6]),
-    					listen_dev(input3, "change", /*input3_change_input_handler*/ ctx[7]),
-    					listen_dev(input3, "input", /*input3_change_input_handler*/ ctx[7])
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[5]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[6]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[7]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[8]),
+    					listen_dev(input4, "change", /*input4_change_input_handler*/ ctx[9]),
+    					listen_dev(input4, "input", /*input4_change_input_handler*/ ctx[9])
     				];
 
     				mounted = true;
@@ -866,28 +931,32 @@ var app = (function () {
     				set_input_value(input2, /*nameConstant*/ ctx[2]);
     			}
 
-    			if (dirty & /*blurSlider*/ 8) {
-    				set_input_value(input3, /*blurSlider*/ ctx[3]);
+    			if (dirty & /*searchEngine*/ 8 && input3.value !== /*searchEngine*/ ctx[3]) {
+    				set_input_value(input3, /*searchEngine*/ ctx[3]);
+    			}
+
+    			if (dirty & /*blurSlider*/ 16) {
+    				set_input_value(input4, /*blurSlider*/ ctx[4]);
     			}
     		},
     		i: function intro(local) {
     			if (current) return;
 
     			add_render_callback(() => {
-    				if (!div9_transition) div9_transition = create_bidirectional_transition(div9, fly, { x: -350, opacity: 1 }, true);
-    				div9_transition.run(1);
+    				if (!div11_transition) div11_transition = create_bidirectional_transition(div11, fly, { x: -350, opacity: 1 }, true);
+    				div11_transition.run(1);
     			});
 
     			current = true;
     		},
     		o: function outro(local) {
-    			if (!div9_transition) div9_transition = create_bidirectional_transition(div9, fly, { x: -350, opacity: 1 }, false);
-    			div9_transition.run(0);
+    			if (!div11_transition) div11_transition = create_bidirectional_transition(div11, fly, { x: -350, opacity: 1 }, false);
+    			div11_transition.run(0);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div9);
-    			if (detaching && div9_transition) div9_transition.end();
+    			if (detaching) detach_dev(div11);
+    			if (detaching && div11_transition) div11_transition.end();
     			mounted = false;
     			run_all(dispose);
     		}
@@ -909,8 +978,13 @@ var app = (function () {
     	validate_slots("Options", slots, []);
     	let blurSlider = 25;
     	let root = document.documentElement;
-    	let { name } = $$props, { greeting } = $$props, { nameConstant } = $$props;
-    	const writable_props = ["name", "greeting", "nameConstant"];
+
+    	let { name } = $$props,
+    		{ greeting } = $$props,
+    		{ nameConstant } = $$props,
+    		{ searchEngine } = $$props;
+
+    	const writable_props = ["name", "greeting", "nameConstant", "searchEngine"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<Options> was created with unknown prop '${key}'`);
@@ -931,15 +1005,21 @@ var app = (function () {
     		$$invalidate(2, nameConstant);
     	}
 
-    	function input3_change_input_handler() {
+    	function input3_input_handler() {
+    		searchEngine = this.value;
+    		$$invalidate(3, searchEngine);
+    	}
+
+    	function input4_change_input_handler() {
     		blurSlider = to_number(this.value);
-    		$$invalidate(3, blurSlider);
+    		$$invalidate(4, blurSlider);
     	}
 
     	$$self.$$set = $$props => {
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
     		if ("greeting" in $$props) $$invalidate(1, greeting = $$props.greeting);
     		if ("nameConstant" in $$props) $$invalidate(2, nameConstant = $$props.nameConstant);
+    		if ("searchEngine" in $$props) $$invalidate(3, searchEngine = $$props.searchEngine);
     	};
 
     	$$self.$capture_state = () => ({
@@ -948,15 +1028,17 @@ var app = (function () {
     		root,
     		name,
     		greeting,
-    		nameConstant
+    		nameConstant,
+    		searchEngine
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("blurSlider" in $$props) $$invalidate(3, blurSlider = $$props.blurSlider);
-    		if ("root" in $$props) $$invalidate(8, root = $$props.root);
+    		if ("blurSlider" in $$props) $$invalidate(4, blurSlider = $$props.blurSlider);
+    		if ("root" in $$props) $$invalidate(10, root = $$props.root);
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
     		if ("greeting" in $$props) $$invalidate(1, greeting = $$props.greeting);
     		if ("nameConstant" in $$props) $$invalidate(2, nameConstant = $$props.nameConstant);
+    		if ("searchEngine" in $$props) $$invalidate(3, searchEngine = $$props.searchEngine);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -964,11 +1046,11 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*blurSlider*/ 8) {
+    		if ($$self.$$.dirty & /*blurSlider*/ 16) {
     			 root.style.setProperty("--blur-strength", blurSlider + "px");
     		}
 
-    		if ($$self.$$.dirty & /*blurSlider*/ 8) {
+    		if ($$self.$$.dirty & /*blurSlider*/ 16) {
     			 console.log(blurSlider);
     		}
     	};
@@ -977,18 +1059,26 @@ var app = (function () {
     		name,
     		greeting,
     		nameConstant,
+    		searchEngine,
     		blurSlider,
     		input0_input_handler,
     		input1_input_handler,
     		input2_input_handler,
-    		input3_change_input_handler
+    		input3_input_handler,
+    		input4_change_input_handler
     	];
     }
 
     class Options extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { name: 0, greeting: 1, nameConstant: 2 });
+
+    		init(this, options, instance, create_fragment, safe_not_equal, {
+    			name: 0,
+    			greeting: 1,
+    			nameConstant: 2,
+    			searchEngine: 3
+    		});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1010,6 +1100,10 @@ var app = (function () {
 
     		if (/*nameConstant*/ ctx[2] === undefined && !("nameConstant" in props)) {
     			console_1.warn("<Options> was created without expected prop 'nameConstant'");
+    		}
+
+    		if (/*searchEngine*/ ctx[3] === undefined && !("searchEngine" in props)) {
+    			console_1.warn("<Options> was created without expected prop 'searchEngine'");
     		}
     	}
 
@@ -1036,6 +1130,14 @@ var app = (function () {
     	set nameConstant(value) {
     		throw new Error("<Options>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
+
+    	get searchEngine() {
+    		throw new Error("<Options>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set searchEngine(value) {
+    		throw new Error("<Options>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     /* src\App.svelte generated by Svelte v3.32.1 */
@@ -1043,24 +1145,29 @@ var app = (function () {
     const { Object: Object_1 } = globals;
     const file$1 = "src\\App.svelte";
 
-    // (71:0) {#if visible}
+    // (73:0) {#if visible}
     function create_if_block(ctx) {
     	let options;
     	let updating_name;
     	let updating_greeting;
     	let updating_nameConstant;
+    	let updating_searchEngine;
     	let current;
 
     	function options_name_binding(value) {
-    		/*options_name_binding*/ ctx[7].call(null, value);
+    		/*options_name_binding*/ ctx[8].call(null, value);
     	}
 
     	function options_greeting_binding(value) {
-    		/*options_greeting_binding*/ ctx[8].call(null, value);
+    		/*options_greeting_binding*/ ctx[9].call(null, value);
     	}
 
     	function options_nameConstant_binding(value) {
-    		/*options_nameConstant_binding*/ ctx[9].call(null, value);
+    		/*options_nameConstant_binding*/ ctx[10].call(null, value);
+    	}
+
+    	function options_searchEngine_binding(value) {
+    		/*options_searchEngine_binding*/ ctx[11].call(null, value);
     	}
 
     	let options_props = {};
@@ -1077,10 +1184,15 @@ var app = (function () {
     		options_props.nameConstant = /*nameConstant*/ ctx[2];
     	}
 
+    	if (/*searchEngine*/ ctx[3] !== void 0) {
+    		options_props.searchEngine = /*searchEngine*/ ctx[3];
+    	}
+
     	options = new Options({ props: options_props, $$inline: true });
     	binding_callbacks.push(() => bind(options, "name", options_name_binding));
     	binding_callbacks.push(() => bind(options, "greeting", options_greeting_binding));
     	binding_callbacks.push(() => bind(options, "nameConstant", options_nameConstant_binding));
+    	binding_callbacks.push(() => bind(options, "searchEngine", options_searchEngine_binding));
 
     	const block = {
     		c: function create() {
@@ -1111,6 +1223,12 @@ var app = (function () {
     				add_flush_callback(() => updating_nameConstant = false);
     			}
 
+    			if (!updating_searchEngine && dirty & /*searchEngine*/ 8) {
+    				updating_searchEngine = true;
+    				options_changes.searchEngine = /*searchEngine*/ ctx[3];
+    				add_flush_callback(() => updating_searchEngine = false);
+    			}
+
     			options.$set(options_changes);
     		},
     		i: function intro(local) {
@@ -1131,7 +1249,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(71:0) {#if visible}",
+    		source: "(73:0) {#if visible}",
     		ctx
     	});
 
@@ -1141,7 +1259,7 @@ var app = (function () {
     function create_fragment$1(ctx) {
     	let div2;
     	let p;
-    	let t0_value = /*evalWelcome*/ ctx[5](/*config*/ ctx[3].greeting, /*config*/ ctx[3].nameConstant) + "";
+    	let t0_value = /*evalWelcome*/ ctx[6](/*config*/ ctx[4].greeting, /*config*/ ctx[4].nameConstant) + "";
     	let t0;
     	let t1;
     	let form;
@@ -1161,7 +1279,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*visible*/ ctx[4] && create_if_block(ctx);
+    	let if_block = /*visible*/ ctx[5] && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
@@ -1183,34 +1301,34 @@ var app = (function () {
     			t5 = space();
     			div4 = element("div");
     			attr_dev(p, "class", "svelte-c7zfmv");
-    			add_location(p, file$1, 60, 4, 1739);
+    			add_location(p, file$1, 62, 4, 1829);
     			attr_dev(input0, "type", "hidden");
     			attr_dev(input0, "name", "sitesearch");
-    			add_location(input0, file$1, 62, 8, 1879);
+    			add_location(input0, file$1, 64, 8, 1969);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "name", "q");
     			attr_dev(input1, "id", "search");
     			attr_dev(input1, "class", "svelte-c7zfmv");
-    			add_location(input1, file$1, 65, 16, 2013);
+    			add_location(input1, file$1, 67, 16, 2103);
     			attr_dev(div0, "class", "search-bar-wrap svelte-c7zfmv");
-    			add_location(div0, file$1, 64, 12, 1966);
+    			add_location(div0, file$1, 66, 12, 2056);
     			attr_dev(div1, "id", "search-area");
     			attr_dev(div1, "class", "svelte-c7zfmv");
-    			add_location(div1, file$1, 63, 8, 1930);
-    			attr_dev(form, "action", form_action_value = evalSearchEngine(/*config*/ ctx[3].searchEngine));
+    			add_location(div1, file$1, 65, 8, 2020);
+    			attr_dev(form, "action", form_action_value = evalSearchEngine(/*config*/ ctx[4].searchEngine));
     			attr_dev(form, "method", "get");
     			attr_dev(form, "class", "svelte-c7zfmv");
-    			add_location(form, file$1, 61, 4, 1803);
+    			add_location(form, file$1, 63, 4, 1893);
     			attr_dev(div2, "class", "svelte-c7zfmv");
-    			add_location(div2, file$1, 59, 0, 1728);
+    			add_location(div2, file$1, 61, 0, 1818);
     			if (img.src !== (img_src_value = "./settings.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Settings");
     			attr_dev(img, "class", "svelte-c7zfmv");
-    			add_location(img, file$1, 76, 4, 2302);
+    			add_location(img, file$1, 78, 4, 2385);
     			attr_dev(div3, "class", "settings svelte-c7zfmv");
-    			add_location(div3, file$1, 75, 0, 2249);
+    			add_location(div3, file$1, 77, 0, 2357);
     			attr_dev(div4, "class", "blur svelte-c7zfmv");
-    			add_location(div4, file$1, 79, 0, 2382);
+    			add_location(div4, file$1, 81, 0, 2465);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1236,26 +1354,22 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = [
-    					listen_dev(img, "click", /*toggleVisible*/ ctx[6], false, false, false),
-    					listen_dev(div3, "click", /*toggleVisible*/ ctx[6], false, false, false)
-    				];
-
+    				dispose = listen_dev(img, "click", /*toggleVisible*/ ctx[7], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if ((!current || dirty & /*config*/ 8) && t0_value !== (t0_value = /*evalWelcome*/ ctx[5](/*config*/ ctx[3].greeting, /*config*/ ctx[3].nameConstant) + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*config*/ 16) && t0_value !== (t0_value = /*evalWelcome*/ ctx[6](/*config*/ ctx[4].greeting, /*config*/ ctx[4].nameConstant) + "")) set_data_dev(t0, t0_value);
 
-    			if (!current || dirty & /*config*/ 8 && form_action_value !== (form_action_value = evalSearchEngine(/*config*/ ctx[3].searchEngine))) {
+    			if (!current || dirty & /*config*/ 16 && form_action_value !== (form_action_value = evalSearchEngine(/*config*/ ctx[4].searchEngine))) {
     				attr_dev(form, "action", form_action_value);
     			}
 
-    			if (/*visible*/ ctx[4]) {
+    			if (/*visible*/ ctx[5]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
-    					if (dirty & /*visible*/ 16) {
+    					if (dirty & /*visible*/ 32) {
     						transition_in(if_block, 1);
     					}
     				} else {
@@ -1292,7 +1406,7 @@ var app = (function () {
     			if (detaching) detach_dev(t5);
     			if (detaching) detach_dev(div4);
     			mounted = false;
-    			run_all(dispose);
+    			dispose();
     		}
     	};
 
@@ -1324,7 +1438,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
     	let config = JSON.parse(JSON.stringify(data));
-    	let visible = true;
+    	let visible = false;
 
     	function evalWelcome(string, nameConstant) {
     		return string.replace(nameConstant, config.name);
@@ -1340,7 +1454,7 @@ var app = (function () {
     	}
 
     	function toggleVisible() {
-    		$$invalidate(4, visible = visible === true ? false : true);
+    		$$invalidate(5, visible = visible === true ? false : true);
     	}
 
     	onMount(async () => {
@@ -1354,7 +1468,8 @@ var app = (function () {
     	*/
     	let name = config.name,
     		greeting = config.greeting,
-    		nameConstant = config.nameConstant;
+    		nameConstant = config.nameConstant,
+    		searchEngine = config.searchEngine;
 
     	const writable_props = [];
 
@@ -1377,6 +1492,11 @@ var app = (function () {
     		$$invalidate(2, nameConstant);
     	}
 
+    	function options_searchEngine_binding(value) {
+    		searchEngine = value;
+    		$$invalidate(3, searchEngine);
+    	}
+
     	$$self.$capture_state = () => ({
     		configOrig: data,
     		onMount,
@@ -1389,15 +1509,17 @@ var app = (function () {
     		toggleVisible,
     		name,
     		greeting,
-    		nameConstant
+    		nameConstant,
+    		searchEngine
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("config" in $$props) $$invalidate(3, config = $$props.config);
-    		if ("visible" in $$props) $$invalidate(4, visible = $$props.visible);
+    		if ("config" in $$props) $$invalidate(4, config = $$props.config);
+    		if ("visible" in $$props) $$invalidate(5, visible = $$props.visible);
     		if ("name" in $$props) $$invalidate(0, name = $$props.name);
     		if ("greeting" in $$props) $$invalidate(1, greeting = $$props.greeting);
     		if ("nameConstant" in $$props) $$invalidate(2, nameConstant = $$props.nameConstant);
+    		if ("searchEngine" in $$props) $$invalidate(3, searchEngine = $$props.searchEngine);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -1406,15 +1528,19 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*name*/ 1) {
-    			 $$invalidate(3, config.name = name, config);
+    			 $$invalidate(4, config.name = name, config);
     		}
 
     		if ($$self.$$.dirty & /*greeting*/ 2) {
-    			 $$invalidate(3, config.greeting = greeting, config);
+    			 $$invalidate(4, config.greeting = greeting, config);
     		}
 
     		if ($$self.$$.dirty & /*nameConstant*/ 4) {
-    			 $$invalidate(3, config.nameConstant = nameConstant, config);
+    			 $$invalidate(4, config.nameConstant = nameConstant, config);
+    		}
+
+    		if ($$self.$$.dirty & /*searchEngine*/ 8) {
+    			 $$invalidate(4, config.searchEngine = searchEngine, config);
     		}
     	};
 
@@ -1422,13 +1548,15 @@ var app = (function () {
     		name,
     		greeting,
     		nameConstant,
+    		searchEngine,
     		config,
     		visible,
     		evalWelcome,
     		toggleVisible,
     		options_name_binding,
     		options_greeting_binding,
-    		options_nameConstant_binding
+    		options_nameConstant_binding,
+    		options_searchEngine_binding
     	];
     }
 
