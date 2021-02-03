@@ -6,10 +6,53 @@
     let root = document.documentElement;
     $: root.style.setProperty('--blur-strength', blurSlider + 'px');
     $: console.log(blurSlider);
+
+    export let name, greeting, nameConstant;
 </script>
 
-<div class="option-container" transition:fly={{ x: -310, opacity: 1 }}>
-    <div class="option">
+<div class="option-container" transition:fly={{ x: -350, opacity: 1 }}>
+    <div class="option generalProportions">
+        <div class="general">
+            <p>General</p>
+            <div class="name">
+                <p for="name" id="name">Name:</p>
+                <input type="text" name="name" id="nameBox" bind:value={name} />
+            </div>
+            <div>
+                <p>
+                    * is replaced by name, and there can only be one * <br />
+                    Also, if greeting is too big for your screen, you can change
+                    it in the CSS.
+                </p>
+            </div>
+            <div class="name">
+                <p for="name" id="name">Greeting:</p>
+                <input
+                    type="text"
+                    name="name"
+                    id="nameBox"
+                    bind:value={greeting}
+                />
+            </div>
+            <div>
+                <p>
+                    If you don't want to use * you can change that too, but you
+                    need to <br />
+                    use this instead of * in welcome
+                </p>
+            </div>
+            <div class="name">
+                <p for="name" id="name">Name Constant:</p>
+                <input
+                    type="text"
+                    name="name"
+                    id="nameConstant"
+                    bind:value={nameConstant}
+                />
+            </div>
+        </div>
+    </div>
+    <div class="option blurProportions">
         <div class="blur">
             <p for="blurStrength" id="blurStrengthLabel">Blur Strength:</p>
             <input
@@ -24,6 +67,7 @@
 </div>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
     .option-container {
         color: white;
         font-family: sans-serif;
@@ -49,6 +93,9 @@
 
         /* Keep this here so it darkens and lightens nicely */
         transition: 0.5s;
+
+        /* Global Font Family */
+        font-family: Roboto;
     }
 
     .option {
@@ -65,6 +112,13 @@
         height: 30vh;
         border-radius: 10px;
 
+        /* So the options don't stick together */
+        margin-bottom: 1vh;
+
+        font-size: 15px;
+    }
+
+    .blurProportions {
         height: 7vh;
         width: 20vw;
     }
@@ -101,5 +155,43 @@
     .blur {
         position: relative;
         margin-left: 20px;
+    }
+
+    .general {
+        display: inline-block;
+        margin-left: 26px;
+        margin-top: -5px;
+    }
+
+    .generalProportions {
+        height: 50vh;
+        width: 20vw;
+    }
+
+    #nameBox {
+        display: inline-block;
+        background-color: transparent;
+        border: 2px solid white;
+        outline: none;
+        color: white;
+        height: 20px;
+        text-indent: 2px;
+        margin-left: 5px;
+    }
+
+    #nameConstant {
+        display: inline-block;
+        background-color: transparent;
+        border: 2px solid white;
+        outline: none;
+        color: white;
+        height: 20px;
+        text-indent: 2px;
+        margin-left: 5px;
+        width: 3vw;
+    }
+
+    #name {
+        display: inline-block;
     }
 </style>

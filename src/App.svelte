@@ -1,7 +1,9 @@
 <script>
-    import config from '../config.yaml';
+    import configOrig from '../config.yaml';
     import { onMount } from 'svelte';
     import Options from './lib/Options.svelte';
+
+    let config = JSON.parse(JSON.stringify(configOrig));
 
     let visible = true;
 
@@ -42,6 +44,17 @@
         loadCSSOptions();
         document.body.style['background-image'] = 'url(./background.jpg)';
     });
+
+    /* Assign config.name to name first so it doesn't say undefined and any 
+		further changes will be updated live.
+		Also autofills the textbox
+	*/
+    let name = config.name,
+        greeting = config.greeting,
+        nameConstant = config.nameConstant;
+    $: config.name = name;
+    $: config.greeting = greeting;
+    $: config.nameConstant = nameConstant;
 </script>
 
 <div>
@@ -56,11 +69,11 @@
     </form>
 </div>
 {#if visible}
-    <Options />
+    <Options bind:name bind:greeting bind:nameConstant />
 {/if}
 
 <!--Icons made by Freepik from www.flaticon.com-->
-<div class="settings">
+<div class="settings" on:click={toggleVisible}>
     <img src="./settings.svg" alt="Settings" on:click={toggleVisible} />
 </div>
 

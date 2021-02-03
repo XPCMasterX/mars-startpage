@@ -1,11 +1,11 @@
 # Your name here
 name: 'Varshith'
-# (-) is replaced by name, and there can only be one (-)
+# * is replaced by name, and there can only be one *
 # Also, if greeting is too big for your screen, you can change it in the CSS[0]
-greeting: 'Hello (-)!'
-# If you don't want to use (-) you can change that too, but you need to
-# use this instead of (-) in welcome
-nameConstant: '(-)'
+greeting: 'Hello *!'
+# If you don't want to use * you can change that too, but you need to
+# use this instead of * in welcome
+nameConstant: '*'
 # If you want to use a different search engine, specify it here
 # Options: DuckDuckGo, Google and Bing.
 # You can use a custom url, usually its https://<Search Engine Name (lowercase)>.com/search

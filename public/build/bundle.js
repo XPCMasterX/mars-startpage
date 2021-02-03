@@ -196,6 +196,9 @@ var app = (function () {
     function add_render_callback(fn) {
         render_callbacks.push(fn);
     }
+    function add_flush_callback(fn) {
+        flush_callbacks.push(fn);
+    }
     let flushing = false;
     const seen_callbacks = new Set();
     function flush() {
@@ -407,6 +410,14 @@ var app = (function () {
         : typeof globalThis !== 'undefined'
             ? globalThis
             : global);
+
+    function bind(component, name, callback) {
+        const index = component.$$.props[name];
+        if (index !== undefined) {
+            component.$$.bound[index] = callback;
+            callback(component.$$.ctx[index]);
+        }
+    }
     function create_component(block) {
         block && block.c();
     }
@@ -566,6 +577,13 @@ var app = (function () {
         else
             dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
     }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
+    }
     function validate_slots(name, slot, keys) {
         for (const slot_key of Object.keys(slot)) {
             if (!~keys.indexOf(slot_key)) {
@@ -594,8 +612,8 @@ var app = (function () {
     }
 
     var data = { name:"Varshith",
-      greeting:"Hello (-)!",
-      nameConstant:"(-)",
+      greeting:"Hello *!",
+      nameConstant:"*",
       searchEngine:"Google",
       css:{ "gradient-start":"#2600ff",
         "gradient-end":"#00ff26",
@@ -629,88 +647,247 @@ var app = (function () {
     const file = "src\\lib\\Options.svelte";
 
     function create_fragment(ctx) {
-    	let div2;
-    	let div1;
-    	let div0;
-    	let p;
+    	let div9;
+    	let div6;
+    	let div5;
+    	let p0;
     	let t1;
-    	let input;
-    	let div2_transition;
+    	let div0;
+    	let p1;
+    	let t3;
+    	let input0;
+    	let t4;
+    	let div1;
+    	let p2;
+    	let t5;
+    	let br0;
+    	let t6;
+    	let t7;
+    	let div2;
+    	let p3;
+    	let t9;
+    	let input1;
+    	let t10;
+    	let div3;
+    	let p4;
+    	let t11;
+    	let br1;
+    	let t12;
+    	let t13;
+    	let div4;
+    	let p5;
+    	let t15;
+    	let input2;
+    	let t16;
+    	let div8;
+    	let div7;
+    	let p6;
+    	let t18;
+    	let input3;
+    	let div9_transition;
     	let current;
     	let mounted;
     	let dispose;
 
     	const block = {
     		c: function create() {
-    			div2 = element("div");
-    			div1 = element("div");
-    			div0 = element("div");
-    			p = element("p");
-    			p.textContent = "Blur Strength:";
+    			div9 = element("div");
+    			div6 = element("div");
+    			div5 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "General";
     			t1 = space();
-    			input = element("input");
-    			attr_dev(p, "for", "blurStrength");
-    			attr_dev(p, "id", "blurStrengthLabel");
-    			attr_dev(p, "class", "svelte-zx5qy9");
-    			add_location(p, file, 13, 12, 383);
-    			attr_dev(input, "type", "range");
-    			attr_dev(input, "min", "1");
-    			attr_dev(input, "max", "100");
-    			attr_dev(input, "id", "blurStrength");
-    			attr_dev(input, "class", "svelte-zx5qy9");
-    			add_location(input, file, 14, 12, 460);
-    			attr_dev(div0, "class", "blur svelte-zx5qy9");
-    			add_location(div0, file, 12, 8, 351);
-    			attr_dev(div1, "class", "option svelte-zx5qy9");
-    			add_location(div1, file, 11, 4, 321);
-    			attr_dev(div2, "class", "option-container svelte-zx5qy9");
-    			add_location(div2, file, 10, 0, 244);
+    			div0 = element("div");
+    			p1 = element("p");
+    			p1.textContent = "Name:";
+    			t3 = space();
+    			input0 = element("input");
+    			t4 = space();
+    			div1 = element("div");
+    			p2 = element("p");
+    			t5 = text("* is replaced by name, and there can only be one * ");
+    			br0 = element("br");
+    			t6 = text("\r\n                    Also, if greeting is too big for your screen, you can change\r\n                    it in the CSS.");
+    			t7 = space();
+    			div2 = element("div");
+    			p3 = element("p");
+    			p3.textContent = "Greeting:";
+    			t9 = space();
+    			input1 = element("input");
+    			t10 = space();
+    			div3 = element("div");
+    			p4 = element("p");
+    			t11 = text("If you don't want to use * you can change that too, but you\r\n                    need to ");
+    			br1 = element("br");
+    			t12 = text("\r\n                    use this instead of * in welcome");
+    			t13 = space();
+    			div4 = element("div");
+    			p5 = element("p");
+    			p5.textContent = "Name Constant:";
+    			t15 = space();
+    			input2 = element("input");
+    			t16 = space();
+    			div8 = element("div");
+    			div7 = element("div");
+    			p6 = element("p");
+    			p6.textContent = "Blur Strength:";
+    			t18 = space();
+    			input3 = element("input");
+    			add_location(p0, file, 15, 12, 453);
+    			attr_dev(p1, "for", "name");
+    			attr_dev(p1, "id", "name");
+    			attr_dev(p1, "class", "svelte-18ks2j8");
+    			add_location(p1, file, 17, 16, 517);
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "name", "name");
+    			attr_dev(input0, "id", "nameBox");
+    			attr_dev(input0, "class", "svelte-18ks2j8");
+    			add_location(input0, file, 18, 16, 568);
+    			attr_dev(div0, "class", "name");
+    			add_location(div0, file, 16, 12, 481);
+    			add_location(br0, file, 22, 71, 765);
+    			add_location(p2, file, 21, 16, 689);
+    			add_location(div1, file, 20, 12, 666);
+    			attr_dev(p3, "for", "name");
+    			attr_dev(p3, "id", "name");
+    			attr_dev(p3, "class", "svelte-18ks2j8");
+    			add_location(p3, file, 28, 16, 981);
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "name", "name");
+    			attr_dev(input1, "id", "nameBox");
+    			attr_dev(input1, "class", "svelte-18ks2j8");
+    			add_location(input1, file, 29, 16, 1036);
+    			attr_dev(div2, "class", "name");
+    			add_location(div2, file, 27, 12, 945);
+    			add_location(br1, file, 39, 28, 1376);
+    			add_location(p4, file, 37, 16, 1262);
+    			add_location(div3, file, 36, 12, 1239);
+    			attr_dev(p5, "for", "name");
+    			attr_dev(p5, "id", "name");
+    			attr_dev(p5, "class", "svelte-18ks2j8");
+    			add_location(p5, file, 44, 16, 1528);
+    			attr_dev(input2, "type", "text");
+    			attr_dev(input2, "name", "name");
+    			attr_dev(input2, "id", "nameConstant");
+    			attr_dev(input2, "class", "svelte-18ks2j8");
+    			add_location(input2, file, 45, 16, 1588);
+    			attr_dev(div4, "class", "name");
+    			add_location(div4, file, 43, 12, 1492);
+    			attr_dev(div5, "class", "general svelte-18ks2j8");
+    			add_location(div5, file, 14, 8, 418);
+    			attr_dev(div6, "class", "option generalProportions svelte-18ks2j8");
+    			add_location(div6, file, 13, 4, 369);
+    			attr_dev(p6, "for", "blurStrength");
+    			attr_dev(p6, "id", "blurStrengthLabel");
+    			attr_dev(p6, "class", "svelte-18ks2j8");
+    			add_location(p6, file, 56, 12, 1898);
+    			attr_dev(input3, "type", "range");
+    			attr_dev(input3, "min", "1");
+    			attr_dev(input3, "max", "100");
+    			attr_dev(input3, "id", "blurStrength");
+    			attr_dev(input3, "class", "svelte-18ks2j8");
+    			add_location(input3, file, 57, 12, 1975);
+    			attr_dev(div7, "class", "blur svelte-18ks2j8");
+    			add_location(div7, file, 55, 8, 1866);
+    			attr_dev(div8, "class", "option blurProportions svelte-18ks2j8");
+    			add_location(div8, file, 54, 4, 1820);
+    			attr_dev(div9, "class", "option-container svelte-18ks2j8");
+    			add_location(div9, file, 12, 0, 292);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div2, anchor);
-    			append_dev(div2, div1);
-    			append_dev(div1, div0);
-    			append_dev(div0, p);
-    			append_dev(div0, t1);
-    			append_dev(div0, input);
-    			set_input_value(input, /*blurSlider*/ ctx[0]);
+    			insert_dev(target, div9, anchor);
+    			append_dev(div9, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, p0);
+    			append_dev(div5, t1);
+    			append_dev(div5, div0);
+    			append_dev(div0, p1);
+    			append_dev(div0, t3);
+    			append_dev(div0, input0);
+    			set_input_value(input0, /*name*/ ctx[0]);
+    			append_dev(div5, t4);
+    			append_dev(div5, div1);
+    			append_dev(div1, p2);
+    			append_dev(p2, t5);
+    			append_dev(p2, br0);
+    			append_dev(p2, t6);
+    			append_dev(div5, t7);
+    			append_dev(div5, div2);
+    			append_dev(div2, p3);
+    			append_dev(div2, t9);
+    			append_dev(div2, input1);
+    			set_input_value(input1, /*greeting*/ ctx[1]);
+    			append_dev(div5, t10);
+    			append_dev(div5, div3);
+    			append_dev(div3, p4);
+    			append_dev(p4, t11);
+    			append_dev(p4, br1);
+    			append_dev(p4, t12);
+    			append_dev(div5, t13);
+    			append_dev(div5, div4);
+    			append_dev(div4, p5);
+    			append_dev(div4, t15);
+    			append_dev(div4, input2);
+    			set_input_value(input2, /*nameConstant*/ ctx[2]);
+    			append_dev(div9, t16);
+    			append_dev(div9, div8);
+    			append_dev(div8, div7);
+    			append_dev(div7, p6);
+    			append_dev(div7, t18);
+    			append_dev(div7, input3);
+    			set_input_value(input3, /*blurSlider*/ ctx[3]);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "change", /*input_change_input_handler*/ ctx[1]),
-    					listen_dev(input, "input", /*input_change_input_handler*/ ctx[1])
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[4]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[5]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[6]),
+    					listen_dev(input3, "change", /*input3_change_input_handler*/ ctx[7]),
+    					listen_dev(input3, "input", /*input3_change_input_handler*/ ctx[7])
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*blurSlider*/ 1) {
-    				set_input_value(input, /*blurSlider*/ ctx[0]);
+    			if (dirty & /*name*/ 1 && input0.value !== /*name*/ ctx[0]) {
+    				set_input_value(input0, /*name*/ ctx[0]);
+    			}
+
+    			if (dirty & /*greeting*/ 2 && input1.value !== /*greeting*/ ctx[1]) {
+    				set_input_value(input1, /*greeting*/ ctx[1]);
+    			}
+
+    			if (dirty & /*nameConstant*/ 4 && input2.value !== /*nameConstant*/ ctx[2]) {
+    				set_input_value(input2, /*nameConstant*/ ctx[2]);
+    			}
+
+    			if (dirty & /*blurSlider*/ 8) {
+    				set_input_value(input3, /*blurSlider*/ ctx[3]);
     			}
     		},
     		i: function intro(local) {
     			if (current) return;
 
     			add_render_callback(() => {
-    				if (!div2_transition) div2_transition = create_bidirectional_transition(div2, fly, { x: -310, opacity: 1 }, true);
-    				div2_transition.run(1);
+    				if (!div9_transition) div9_transition = create_bidirectional_transition(div9, fly, { x: -350, opacity: 1 }, true);
+    				div9_transition.run(1);
     			});
 
     			current = true;
     		},
     		o: function outro(local) {
-    			if (!div2_transition) div2_transition = create_bidirectional_transition(div2, fly, { x: -310, opacity: 1 }, false);
-    			div2_transition.run(0);
+    			if (!div9_transition) div9_transition = create_bidirectional_transition(div9, fly, { x: -350, opacity: 1 }, false);
+    			div9_transition.run(0);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div2);
-    			if (detaching && div2_transition) div2_transition.end();
+    			if (detaching) detach_dev(div9);
+    			if (detaching && div9_transition) div9_transition.end();
     			mounted = false;
     			run_all(dispose);
     		}
@@ -732,22 +909,54 @@ var app = (function () {
     	validate_slots("Options", slots, []);
     	let blurSlider = 25;
     	let root = document.documentElement;
-    	const writable_props = [];
+    	let { name } = $$props, { greeting } = $$props, { nameConstant } = $$props;
+    	const writable_props = ["name", "greeting", "nameConstant"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<Options> was created with unknown prop '${key}'`);
     	});
 
-    	function input_change_input_handler() {
-    		blurSlider = to_number(this.value);
-    		$$invalidate(0, blurSlider);
+    	function input0_input_handler() {
+    		name = this.value;
+    		$$invalidate(0, name);
     	}
 
-    	$$self.$capture_state = () => ({ fly, blurSlider, root });
+    	function input1_input_handler() {
+    		greeting = this.value;
+    		$$invalidate(1, greeting);
+    	}
+
+    	function input2_input_handler() {
+    		nameConstant = this.value;
+    		$$invalidate(2, nameConstant);
+    	}
+
+    	function input3_change_input_handler() {
+    		blurSlider = to_number(this.value);
+    		$$invalidate(3, blurSlider);
+    	}
+
+    	$$self.$$set = $$props => {
+    		if ("name" in $$props) $$invalidate(0, name = $$props.name);
+    		if ("greeting" in $$props) $$invalidate(1, greeting = $$props.greeting);
+    		if ("nameConstant" in $$props) $$invalidate(2, nameConstant = $$props.nameConstant);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		fly,
+    		blurSlider,
+    		root,
+    		name,
+    		greeting,
+    		nameConstant
+    	});
 
     	$$self.$inject_state = $$props => {
-    		if ("blurSlider" in $$props) $$invalidate(0, blurSlider = $$props.blurSlider);
-    		if ("root" in $$props) $$invalidate(2, root = $$props.root);
+    		if ("blurSlider" in $$props) $$invalidate(3, blurSlider = $$props.blurSlider);
+    		if ("root" in $$props) $$invalidate(8, root = $$props.root);
+    		if ("name" in $$props) $$invalidate(0, name = $$props.name);
+    		if ("greeting" in $$props) $$invalidate(1, greeting = $$props.greeting);
+    		if ("nameConstant" in $$props) $$invalidate(2, nameConstant = $$props.nameConstant);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -755,22 +964,31 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*blurSlider*/ 1) {
+    		if ($$self.$$.dirty & /*blurSlider*/ 8) {
     			 root.style.setProperty("--blur-strength", blurSlider + "px");
     		}
 
-    		if ($$self.$$.dirty & /*blurSlider*/ 1) {
+    		if ($$self.$$.dirty & /*blurSlider*/ 8) {
     			 console.log(blurSlider);
     		}
     	};
 
-    	return [blurSlider, input_change_input_handler];
+    	return [
+    		name,
+    		greeting,
+    		nameConstant,
+    		blurSlider,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler,
+    		input3_change_input_handler
+    	];
     }
 
     class Options extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, {});
+    		init(this, options, instance, create_fragment, safe_not_equal, { name: 0, greeting: 1, nameConstant: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -778,6 +996,45 @@ var app = (function () {
     			options,
     			id: create_fragment.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*name*/ ctx[0] === undefined && !("name" in props)) {
+    			console_1.warn("<Options> was created without expected prop 'name'");
+    		}
+
+    		if (/*greeting*/ ctx[1] === undefined && !("greeting" in props)) {
+    			console_1.warn("<Options> was created without expected prop 'greeting'");
+    		}
+
+    		if (/*nameConstant*/ ctx[2] === undefined && !("nameConstant" in props)) {
+    			console_1.warn("<Options> was created without expected prop 'nameConstant'");
+    		}
+    	}
+
+    	get name() {
+    		throw new Error("<Options>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set name(value) {
+    		throw new Error("<Options>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get greeting() {
+    		throw new Error("<Options>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set greeting(value) {
+    		throw new Error("<Options>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get nameConstant() {
+    		throw new Error("<Options>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set nameConstant(value) {
+    		throw new Error("<Options>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -786,11 +1043,44 @@ var app = (function () {
     const { Object: Object_1 } = globals;
     const file$1 = "src\\App.svelte";
 
-    // (58:0) {#if visible}
+    // (71:0) {#if visible}
     function create_if_block(ctx) {
     	let options;
+    	let updating_name;
+    	let updating_greeting;
+    	let updating_nameConstant;
     	let current;
-    	options = new Options({ $$inline: true });
+
+    	function options_name_binding(value) {
+    		/*options_name_binding*/ ctx[7].call(null, value);
+    	}
+
+    	function options_greeting_binding(value) {
+    		/*options_greeting_binding*/ ctx[8].call(null, value);
+    	}
+
+    	function options_nameConstant_binding(value) {
+    		/*options_nameConstant_binding*/ ctx[9].call(null, value);
+    	}
+
+    	let options_props = {};
+
+    	if (/*name*/ ctx[0] !== void 0) {
+    		options_props.name = /*name*/ ctx[0];
+    	}
+
+    	if (/*greeting*/ ctx[1] !== void 0) {
+    		options_props.greeting = /*greeting*/ ctx[1];
+    	}
+
+    	if (/*nameConstant*/ ctx[2] !== void 0) {
+    		options_props.nameConstant = /*nameConstant*/ ctx[2];
+    	}
+
+    	options = new Options({ props: options_props, $$inline: true });
+    	binding_callbacks.push(() => bind(options, "name", options_name_binding));
+    	binding_callbacks.push(() => bind(options, "greeting", options_greeting_binding));
+    	binding_callbacks.push(() => bind(options, "nameConstant", options_nameConstant_binding));
 
     	const block = {
     		c: function create() {
@@ -799,6 +1089,29 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			mount_component(options, target, anchor);
     			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const options_changes = {};
+
+    			if (!updating_name && dirty & /*name*/ 1) {
+    				updating_name = true;
+    				options_changes.name = /*name*/ ctx[0];
+    				add_flush_callback(() => updating_name = false);
+    			}
+
+    			if (!updating_greeting && dirty & /*greeting*/ 2) {
+    				updating_greeting = true;
+    				options_changes.greeting = /*greeting*/ ctx[1];
+    				add_flush_callback(() => updating_greeting = false);
+    			}
+
+    			if (!updating_nameConstant && dirty & /*nameConstant*/ 4) {
+    				updating_nameConstant = true;
+    				options_changes.nameConstant = /*nameConstant*/ ctx[2];
+    				add_flush_callback(() => updating_nameConstant = false);
+    			}
+
+    			options.$set(options_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -818,7 +1131,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(58:0) {#if visible}",
+    		source: "(71:0) {#if visible}",
     		ctx
     	});
 
@@ -828,6 +1141,8 @@ var app = (function () {
     function create_fragment$1(ctx) {
     	let div2;
     	let p;
+    	let t0_value = /*evalWelcome*/ ctx[5](/*config*/ ctx[3].greeting, /*config*/ ctx[3].nameConstant) + "";
+    	let t0;
     	let t1;
     	let form;
     	let input0;
@@ -835,6 +1150,7 @@ var app = (function () {
     	let div1;
     	let div0;
     	let input1;
+    	let form_action_value;
     	let t3;
     	let t4;
     	let div3;
@@ -845,13 +1161,13 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*visible*/ ctx[0] && create_if_block(ctx);
+    	let if_block = /*visible*/ ctx[4] && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
     			div2 = element("div");
     			p = element("p");
-    			p.textContent = `${/*evalWelcome*/ ctx[1](data.greeting, data.nameConstant)}`;
+    			t0 = text(t0_value);
     			t1 = space();
     			form = element("form");
     			input0 = element("input");
@@ -867,34 +1183,34 @@ var app = (function () {
     			t5 = space();
     			div4 = element("div");
     			attr_dev(p, "class", "svelte-c7zfmv");
-    			add_location(p, file$1, 47, 4, 1300);
+    			add_location(p, file$1, 60, 4, 1739);
     			attr_dev(input0, "type", "hidden");
     			attr_dev(input0, "name", "sitesearch");
-    			add_location(input0, file$1, 49, 8, 1440);
+    			add_location(input0, file$1, 62, 8, 1879);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "name", "q");
     			attr_dev(input1, "id", "search");
     			attr_dev(input1, "class", "svelte-c7zfmv");
-    			add_location(input1, file$1, 52, 16, 1574);
+    			add_location(input1, file$1, 65, 16, 2013);
     			attr_dev(div0, "class", "search-bar-wrap svelte-c7zfmv");
-    			add_location(div0, file$1, 51, 12, 1527);
+    			add_location(div0, file$1, 64, 12, 1966);
     			attr_dev(div1, "id", "search-area");
     			attr_dev(div1, "class", "svelte-c7zfmv");
-    			add_location(div1, file$1, 50, 8, 1491);
-    			attr_dev(form, "action", evalSearchEngine(data.searchEngine));
+    			add_location(div1, file$1, 63, 8, 1930);
+    			attr_dev(form, "action", form_action_value = evalSearchEngine(/*config*/ ctx[3].searchEngine));
     			attr_dev(form, "method", "get");
     			attr_dev(form, "class", "svelte-c7zfmv");
-    			add_location(form, file$1, 48, 4, 1364);
+    			add_location(form, file$1, 61, 4, 1803);
     			attr_dev(div2, "class", "svelte-c7zfmv");
-    			add_location(div2, file$1, 46, 0, 1289);
+    			add_location(div2, file$1, 59, 0, 1728);
     			if (img.src !== (img_src_value = "./settings.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Settings");
     			attr_dev(img, "class", "svelte-c7zfmv");
-    			add_location(img, file$1, 63, 4, 1796);
+    			add_location(img, file$1, 76, 4, 2302);
     			attr_dev(div3, "class", "settings svelte-c7zfmv");
-    			add_location(div3, file$1, 62, 0, 1768);
+    			add_location(div3, file$1, 75, 0, 2249);
     			attr_dev(div4, "class", "blur svelte-c7zfmv");
-    			add_location(div4, file$1, 66, 0, 1876);
+    			add_location(div4, file$1, 79, 0, 2382);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -902,6 +1218,7 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
     			append_dev(div2, p);
+    			append_dev(p, t0);
     			append_dev(div2, t1);
     			append_dev(div2, form);
     			append_dev(form, input0);
@@ -919,14 +1236,26 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(img, "click", /*toggleVisible*/ ctx[2], false, false, false);
+    				dispose = [
+    					listen_dev(img, "click", /*toggleVisible*/ ctx[6], false, false, false),
+    					listen_dev(div3, "click", /*toggleVisible*/ ctx[6], false, false, false)
+    				];
+
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (/*visible*/ ctx[0]) {
+    			if ((!current || dirty & /*config*/ 8) && t0_value !== (t0_value = /*evalWelcome*/ ctx[5](/*config*/ ctx[3].greeting, /*config*/ ctx[3].nameConstant) + "")) set_data_dev(t0, t0_value);
+
+    			if (!current || dirty & /*config*/ 8 && form_action_value !== (form_action_value = evalSearchEngine(/*config*/ ctx[3].searchEngine))) {
+    				attr_dev(form, "action", form_action_value);
+    			}
+
+    			if (/*visible*/ ctx[4]) {
     				if (if_block) {
-    					if (dirty & /*visible*/ 1) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*visible*/ 16) {
     						transition_in(if_block, 1);
     					}
     				} else {
@@ -963,7 +1292,7 @@ var app = (function () {
     			if (detaching) detach_dev(t5);
     			if (detaching) detach_dev(div4);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -994,15 +1323,16 @@ var app = (function () {
     function instance$1($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
+    	let config = JSON.parse(JSON.stringify(data));
     	let visible = true;
 
     	function evalWelcome(string, nameConstant) {
-    		return string.replace(nameConstant, data.name);
+    		return string.replace(nameConstant, config.name);
     	}
 
     	function loadCSSOptions() {
     		let root = document.documentElement;
-    		let cssProperties = Object.entries(data.css);
+    		let cssProperties = Object.entries(config.css);
 
     		for (const [key, value] of cssProperties) {
     			root.style.setProperty("--" + key, value.toString());
@@ -1010,7 +1340,7 @@ var app = (function () {
     	}
 
     	function toggleVisible() {
-    		$$invalidate(0, visible = visible === true ? false : true);
+    		$$invalidate(4, visible = visible === true ? false : true);
     	}
 
     	onMount(async () => {
@@ -1018,32 +1348,88 @@ var app = (function () {
     		document.body.style["background-image"] = "url(./background.jpg)";
     	});
 
+    	/* Assign config.name to name first so it doesn't say undefined and any 
+    		further changes will be updated live.
+    		Also autofills the textbox
+    	*/
+    	let name = config.name,
+    		greeting = config.greeting,
+    		nameConstant = config.nameConstant;
+
     	const writable_props = [];
 
     	Object_1.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
+    	function options_name_binding(value) {
+    		name = value;
+    		$$invalidate(0, name);
+    	}
+
+    	function options_greeting_binding(value) {
+    		greeting = value;
+    		$$invalidate(1, greeting);
+    	}
+
+    	function options_nameConstant_binding(value) {
+    		nameConstant = value;
+    		$$invalidate(2, nameConstant);
+    	}
+
     	$$self.$capture_state = () => ({
-    		config: data,
+    		configOrig: data,
     		onMount,
     		Options,
+    		config,
     		visible,
     		evalWelcome,
     		evalSearchEngine,
     		loadCSSOptions,
-    		toggleVisible
+    		toggleVisible,
+    		name,
+    		greeting,
+    		nameConstant
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("visible" in $$props) $$invalidate(0, visible = $$props.visible);
+    		if ("config" in $$props) $$invalidate(3, config = $$props.config);
+    		if ("visible" in $$props) $$invalidate(4, visible = $$props.visible);
+    		if ("name" in $$props) $$invalidate(0, name = $$props.name);
+    		if ("greeting" in $$props) $$invalidate(1, greeting = $$props.greeting);
+    		if ("nameConstant" in $$props) $$invalidate(2, nameConstant = $$props.nameConstant);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [visible, evalWelcome, toggleVisible];
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*name*/ 1) {
+    			 $$invalidate(3, config.name = name, config);
+    		}
+
+    		if ($$self.$$.dirty & /*greeting*/ 2) {
+    			 $$invalidate(3, config.greeting = greeting, config);
+    		}
+
+    		if ($$self.$$.dirty & /*nameConstant*/ 4) {
+    			 $$invalidate(3, config.nameConstant = nameConstant, config);
+    		}
+    	};
+
+    	return [
+    		name,
+    		greeting,
+    		nameConstant,
+    		config,
+    		visible,
+    		evalWelcome,
+    		toggleVisible,
+    		options_name_binding,
+    		options_greeting_binding,
+    		options_nameConstant_binding
+    	];
     }
 
     class App extends SvelteComponentDev {
