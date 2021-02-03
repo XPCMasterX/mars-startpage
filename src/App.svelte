@@ -182,7 +182,7 @@
         /* Blur the background */
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: var(--blur-tint);
 
         /* Rounded corners */
         border-radius: 10px;
@@ -192,7 +192,7 @@
     }
 
     .settings:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--hover-tint);
     }
 
     .blur {
@@ -201,7 +201,7 @@
         right: 0;
         height: 100vh;
         width: 100vw;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: var(--image-blur);
         z-index: -1;
         -webkit-backdrop-filter: blur(var(--blur-strength));
         backdrop-filter: blur(var(--blur-strength));

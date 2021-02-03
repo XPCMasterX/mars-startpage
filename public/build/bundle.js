@@ -622,7 +622,10 @@ var app = (function () {
         "gradient-end":"#00ff26",
         "text-font-size":"150px",
         "search-background-color":"#181b1e",
-        "blur-strength":"25px" } };
+        "blur-tint":"#ffffff3c",
+        "hover-tint":"#ffffffbb",
+        "image-blur":"#00000000",
+        "blur-strength":"0px" } };
 
     function cubicOut(t) {
         const f = t - 1.0;
@@ -769,12 +772,12 @@ var app = (function () {
     			add_location(p0, file, 15, 12, 467);
     			attr_dev(p1, "for", "name");
     			attr_dev(p1, "id", "name");
-    			attr_dev(p1, "class", "svelte-a4t92h");
+    			attr_dev(p1, "class", "svelte-axfg0q");
     			add_location(p1, file, 17, 16, 548);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "name", "name");
     			attr_dev(input0, "id", "nameBox");
-    			attr_dev(input0, "class", "svelte-a4t92h");
+    			attr_dev(input0, "class", "svelte-axfg0q");
     			add_location(input0, file, 18, 16, 599);
     			attr_dev(div0, "class", "name");
     			add_location(div0, file, 16, 12, 512);
@@ -783,12 +786,12 @@ var app = (function () {
     			add_location(div1, file, 20, 12, 697);
     			attr_dev(p3, "for", "name");
     			attr_dev(p3, "id", "name");
-    			attr_dev(p3, "class", "svelte-a4t92h");
+    			attr_dev(p3, "class", "svelte-axfg0q");
     			add_location(p3, file, 28, 16, 1012);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "name", "name");
     			attr_dev(input1, "id", "nameBox");
-    			attr_dev(input1, "class", "svelte-a4t92h");
+    			attr_dev(input1, "class", "svelte-axfg0q");
     			add_location(input1, file, 29, 16, 1067);
     			attr_dev(div2, "class", "name");
     			add_location(div2, file, 27, 12, 976);
@@ -797,12 +800,12 @@ var app = (function () {
     			add_location(div3, file, 36, 12, 1270);
     			attr_dev(p5, "for", "name");
     			attr_dev(p5, "id", "name");
-    			attr_dev(p5, "class", "svelte-a4t92h");
+    			attr_dev(p5, "class", "svelte-axfg0q");
     			add_location(p5, file, 44, 16, 1559);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "name", "name");
     			attr_dev(input2, "id", "nameConstant");
-    			attr_dev(input2, "class", "svelte-a4t92h");
+    			attr_dev(input2, "class", "svelte-axfg0q");
     			add_location(input2, file, 45, 16, 1619);
     			attr_dev(div4, "class", "name");
     			add_location(div4, file, 43, 12, 1523);
@@ -812,35 +815,35 @@ var app = (function () {
     			add_location(div5, file, 52, 12, 1831);
     			attr_dev(p7, "for", "name");
     			attr_dev(p7, "id", "name");
-    			attr_dev(p7, "class", "svelte-a4t92h");
+    			attr_dev(p7, "class", "svelte-axfg0q");
     			add_location(p7, file, 62, 16, 2258);
     			attr_dev(input3, "type", "text");
     			attr_dev(input3, "name", "name");
     			attr_dev(input3, "id", "nameConstant");
     			set_style(input3, "width", "7vw", 1);
-    			attr_dev(input3, "class", "svelte-a4t92h");
+    			attr_dev(input3, "class", "svelte-axfg0q");
     			add_location(input3, file, 63, 16, 2318);
     			attr_dev(div6, "class", "name");
     			add_location(div6, file, 61, 12, 2222);
-    			attr_dev(div7, "class", "general svelte-a4t92h");
+    			attr_dev(div7, "class", "general svelte-axfg0q");
     			add_location(div7, file, 14, 8, 432);
-    			attr_dev(div8, "class", "option generalProportions svelte-a4t92h");
+    			attr_dev(div8, "class", "option generalProportions svelte-axfg0q");
     			add_location(div8, file, 13, 4, 383);
     			attr_dev(p8, "for", "blurStrength");
     			attr_dev(p8, "id", "blurStrengthLabel");
-    			attr_dev(p8, "class", "svelte-a4t92h");
+    			attr_dev(p8, "class", "svelte-axfg0q");
     			add_location(p8, file, 75, 12, 2679);
     			attr_dev(input4, "type", "range");
     			attr_dev(input4, "min", "1");
     			attr_dev(input4, "max", "100");
     			attr_dev(input4, "id", "blurStrength");
-    			attr_dev(input4, "class", "svelte-a4t92h");
+    			attr_dev(input4, "class", "svelte-axfg0q");
     			add_location(input4, file, 76, 12, 2756);
-    			attr_dev(div9, "class", "blur svelte-a4t92h");
+    			attr_dev(div9, "class", "blur svelte-axfg0q");
     			add_location(div9, file, 74, 8, 2647);
-    			attr_dev(div10, "class", "option blurProportions svelte-a4t92h");
+    			attr_dev(div10, "class", "option blurProportions svelte-axfg0q");
     			add_location(div10, file, 73, 4, 2601);
-    			attr_dev(div11, "class", "option-container svelte-a4t92h");
+    			attr_dev(div11, "class", "option-container svelte-axfg0q");
     			add_location(div11, file, 12, 0, 306);
     		},
     		l: function claim(nodes) {
@@ -1300,7 +1303,7 @@ var app = (function () {
     			img = element("img");
     			t5 = space();
     			div4 = element("div");
-    			attr_dev(p, "class", "svelte-c7zfmv");
+    			attr_dev(p, "class", "svelte-jngofd");
     			add_location(p, file$1, 62, 4, 1829);
     			attr_dev(input0, "type", "hidden");
     			attr_dev(input0, "name", "sitesearch");
@@ -1308,26 +1311,26 @@ var app = (function () {
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "name", "q");
     			attr_dev(input1, "id", "search");
-    			attr_dev(input1, "class", "svelte-c7zfmv");
+    			attr_dev(input1, "class", "svelte-jngofd");
     			add_location(input1, file$1, 67, 16, 2103);
-    			attr_dev(div0, "class", "search-bar-wrap svelte-c7zfmv");
+    			attr_dev(div0, "class", "search-bar-wrap svelte-jngofd");
     			add_location(div0, file$1, 66, 12, 2056);
     			attr_dev(div1, "id", "search-area");
-    			attr_dev(div1, "class", "svelte-c7zfmv");
+    			attr_dev(div1, "class", "svelte-jngofd");
     			add_location(div1, file$1, 65, 8, 2020);
     			attr_dev(form, "action", form_action_value = evalSearchEngine(/*config*/ ctx[4].searchEngine));
     			attr_dev(form, "method", "get");
-    			attr_dev(form, "class", "svelte-c7zfmv");
+    			attr_dev(form, "class", "svelte-jngofd");
     			add_location(form, file$1, 63, 4, 1893);
-    			attr_dev(div2, "class", "svelte-c7zfmv");
+    			attr_dev(div2, "class", "svelte-jngofd");
     			add_location(div2, file$1, 61, 0, 1818);
     			if (img.src !== (img_src_value = "./settings.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Settings");
-    			attr_dev(img, "class", "svelte-c7zfmv");
+    			attr_dev(img, "class", "svelte-jngofd");
     			add_location(img, file$1, 78, 4, 2385);
-    			attr_dev(div3, "class", "settings svelte-c7zfmv");
+    			attr_dev(div3, "class", "settings svelte-jngofd");
     			add_location(div3, file$1, 77, 0, 2357);
-    			attr_dev(div4, "class", "blur svelte-c7zfmv");
+    			attr_dev(div4, "class", "blur svelte-jngofd");
     			add_location(div4, file$1, 81, 0, 2465);
     		},
     		l: function claim(nodes) {

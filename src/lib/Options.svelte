@@ -95,7 +95,7 @@
         /* Blur background */
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: var(--blur-tint);
 
         /* Make it not affect other elements */
         position: fixed;
@@ -143,7 +143,7 @@
     }
 
     .option-container:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--hover-tint);
     }
 
     #blurStrength {
