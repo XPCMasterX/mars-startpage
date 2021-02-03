@@ -19,4 +19,8 @@ css:
     gradient-end: '#00ff26'
     # For greeting
     text-font-size: '150px'
-    background-color: '#181b1e'
+    # For the search bar
+    # If you want the gradient to be on the text box as well, set this to an rgba value
+    search-background-color: '#181b1e'
+    # Blur strength
+    blur-strength: '25px'
