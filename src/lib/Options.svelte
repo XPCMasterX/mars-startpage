@@ -17,14 +17,16 @@
         <div class="general">
             <p><strong>General</strong></p>
             <div>
+                <label for="checkbox">Show text</label>
                 <input
+                    name="checkbox"
                     type="checkbox"
                     bind:checked={textVisible}
                     on:click={() => {
                         textVisible === true
                             ? root.style.setProperty(
                                   '--option-general-height',
-                                  '40vh'
+                                  '38vh'
                               )
                             : root.style.setProperty(
                                   '--option-general-height',
@@ -113,7 +115,7 @@
 
 <style>
     :root {
-        --option-general-height: 40vh;
+        --option-general-height: 38vh;
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');

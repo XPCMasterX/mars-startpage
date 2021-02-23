@@ -652,7 +652,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src\\lib\\Options.svelte";
 
-    // (41:16) {#if textVisible}
+    // (43:16) {#if textVisible}
     function create_if_block_2(ctx) {
     	let p;
     	let t0;
@@ -665,10 +665,10 @@ var app = (function () {
     			t0 = text("* is replaced by name, and there can only be one * ");
     			br = element("br");
     			t1 = text("\r\n                        Also, if greeting is too big for your screen, you can change\r\n                        it in the CSS.");
-    			attr_dev(br, "class", "svelte-1attzvl");
-    			add_location(br, file, 42, 75, 1533);
-    			attr_dev(p, "class", "svelte-1attzvl");
-    			add_location(p, file, 41, 20, 1453);
+    			attr_dev(br, "class", "svelte-1mfpiae");
+    			add_location(br, file, 44, 75, 1627);
+    			attr_dev(p, "class", "svelte-1mfpiae");
+    			add_location(p, file, 43, 20, 1547);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -685,14 +685,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(41:16) {#if textVisible}",
+    		source: "(43:16) {#if textVisible}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:16) {#if textVisible}
+    // (62:16) {#if textVisible}
     function create_if_block_1(ctx) {
     	let p;
     	let t0;
@@ -705,10 +705,10 @@ var app = (function () {
     			t0 = text("If you don't want to use * you can change that too, but\r\n                        you need to ");
     			br = element("br");
     			t1 = text("\r\n                        use this instead of * in welcome");
-    			attr_dev(br, "class", "svelte-1attzvl");
-    			add_location(br, file, 62, 36, 2251);
-    			attr_dev(p, "class", "svelte-1attzvl");
-    			add_location(p, file, 60, 20, 2129);
+    			attr_dev(br, "class", "svelte-1mfpiae");
+    			add_location(br, file, 64, 36, 2345);
+    			attr_dev(p, "class", "svelte-1mfpiae");
+    			add_location(p, file, 62, 20, 2223);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -725,14 +725,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(60:16) {#if textVisible}",
+    		source: "(62:16) {#if textVisible}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:16) {#if textVisible}
+    // (80:16) {#if textVisible}
     function create_if_block(ctx) {
     	let p;
     	let t0;
@@ -749,12 +749,12 @@ var app = (function () {
     			t1 = text("\r\n                        Options: DuckDuckGo, Google and Bing. ");
     			br1 = element("br");
     			t2 = text("\r\n                        You can use a custom url, usually its https://(Search Engine\r\n                        Name (lowercase)).com/search");
-    			attr_dev(br0, "class", "svelte-1attzvl");
-    			add_location(br0, file, 80, 29, 2884);
-    			attr_dev(br1, "class", "svelte-1attzvl");
-    			add_location(br1, file, 81, 62, 2954);
-    			attr_dev(p, "class", "svelte-1attzvl");
-    			add_location(p, file, 78, 20, 2768);
+    			attr_dev(br0, "class", "svelte-1mfpiae");
+    			add_location(br0, file, 82, 29, 2978);
+    			attr_dev(br1, "class", "svelte-1mfpiae");
+    			add_location(br1, file, 83, 62, 3048);
+    			attr_dev(p, "class", "svelte-1mfpiae");
+    			add_location(p, file, 80, 20, 2862);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -773,7 +773,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(78:16) {#if textVisible}",
+    		source: "(80:16) {#if textVisible}",
     		ctx
     	});
 
@@ -788,38 +788,40 @@ var app = (function () {
     	let strong;
     	let t1;
     	let div0;
+    	let label;
+    	let t3;
     	let input0;
-    	let t2;
+    	let t4;
     	let div1;
     	let p1;
-    	let t4;
-    	let input1;
-    	let t5;
-    	let div2;
     	let t6;
+    	let input1;
+    	let t7;
+    	let div2;
+    	let t8;
     	let div3;
     	let p2;
-    	let t8;
-    	let input2;
-    	let t9;
-    	let div4;
     	let t10;
+    	let input2;
+    	let t11;
+    	let div4;
+    	let t12;
     	let div5;
     	let p3;
-    	let t12;
-    	let input3;
-    	let t13;
-    	let div6;
     	let t14;
+    	let input3;
+    	let t15;
+    	let div6;
+    	let t16;
     	let div7;
     	let p4;
-    	let t16;
+    	let t18;
     	let input4;
-    	let t17;
+    	let t19;
     	let div11;
     	let div10;
     	let p5;
-    	let t19;
+    	let t21;
     	let input5;
     	let div12_transition;
     	let current;
@@ -839,126 +841,133 @@ var app = (function () {
     			strong.textContent = "General";
     			t1 = space();
     			div0 = element("div");
+    			label = element("label");
+    			label.textContent = "Show text";
+    			t3 = space();
     			input0 = element("input");
-    			t2 = space();
+    			t4 = space();
     			div1 = element("div");
     			p1 = element("p");
     			p1.textContent = "Name:";
-    			t4 = space();
+    			t6 = space();
     			input1 = element("input");
-    			t5 = space();
+    			t7 = space();
     			div2 = element("div");
     			if (if_block0) if_block0.c();
-    			t6 = space();
+    			t8 = space();
     			div3 = element("div");
     			p2 = element("p");
     			p2.textContent = "Greeting:";
-    			t8 = space();
+    			t10 = space();
     			input2 = element("input");
-    			t9 = space();
+    			t11 = space();
     			div4 = element("div");
     			if (if_block1) if_block1.c();
-    			t10 = space();
+    			t12 = space();
     			div5 = element("div");
     			p3 = element("p");
     			p3.textContent = "Name Constant:";
-    			t12 = space();
+    			t14 = space();
     			input3 = element("input");
-    			t13 = space();
+    			t15 = space();
     			div6 = element("div");
     			if (if_block2) if_block2.c();
-    			t14 = space();
+    			t16 = space();
     			div7 = element("div");
     			p4 = element("p");
     			p4.textContent = "Search Engine:";
-    			t16 = space();
+    			t18 = space();
     			input4 = element("input");
-    			t17 = space();
+    			t19 = space();
     			div11 = element("div");
     			div10 = element("div");
     			p5 = element("p");
     			p5.textContent = "Blur Strength:";
-    			t19 = space();
+    			t21 = space();
     			input5 = element("input");
-    			attr_dev(strong, "class", "svelte-1attzvl");
+    			attr_dev(strong, "class", "svelte-1mfpiae");
     			add_location(strong, file, 17, 15, 502);
-    			attr_dev(p0, "class", "svelte-1attzvl");
+    			attr_dev(p0, "class", "svelte-1mfpiae");
     			add_location(p0, file, 17, 12, 499);
+    			attr_dev(label, "for", "checkbox");
+    			attr_dev(label, "class", "svelte-1mfpiae");
+    			add_location(label, file, 19, 16, 567);
+    			attr_dev(input0, "name", "checkbox");
     			attr_dev(input0, "type", "checkbox");
-    			attr_dev(input0, "class", "svelte-1attzvl");
-    			add_location(input0, file, 19, 16, 567);
-    			attr_dev(div0, "class", "svelte-1attzvl");
+    			attr_dev(input0, "class", "svelte-1mfpiae");
+    			add_location(input0, file, 20, 16, 624);
+    			attr_dev(div0, "class", "svelte-1mfpiae");
     			add_location(div0, file, 18, 12, 544);
     			attr_dev(p1, "for", "name");
     			attr_dev(p1, "id", "name");
-    			attr_dev(p1, "class", "svelte-1attzvl");
-    			add_location(p1, file, 36, 16, 1242);
+    			attr_dev(p1, "class", "svelte-1mfpiae");
+    			add_location(p1, file, 38, 16, 1336);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "name", "name");
     			attr_dev(input1, "id", "nameBox");
-    			attr_dev(input1, "class", "svelte-1attzvl");
-    			add_location(input1, file, 37, 16, 1293);
-    			attr_dev(div1, "class", "name svelte-1attzvl");
-    			add_location(div1, file, 35, 12, 1206);
-    			attr_dev(div2, "class", "svelte-1attzvl");
-    			add_location(div2, file, 39, 12, 1391);
+    			attr_dev(input1, "class", "svelte-1mfpiae");
+    			add_location(input1, file, 39, 16, 1387);
+    			attr_dev(div1, "class", "name svelte-1mfpiae");
+    			add_location(div1, file, 37, 12, 1300);
+    			attr_dev(div2, "class", "svelte-1mfpiae");
+    			add_location(div2, file, 41, 12, 1485);
     			attr_dev(p2, "for", "name");
     			attr_dev(p2, "id", "name");
-    			attr_dev(p2, "class", "svelte-1attzvl");
-    			add_location(p2, file, 50, 16, 1809);
+    			attr_dev(p2, "class", "svelte-1mfpiae");
+    			add_location(p2, file, 52, 16, 1903);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "name", "name");
     			attr_dev(input2, "id", "nameBox");
-    			attr_dev(input2, "class", "svelte-1attzvl");
-    			add_location(input2, file, 51, 16, 1864);
-    			attr_dev(div3, "class", "name svelte-1attzvl");
-    			add_location(div3, file, 49, 12, 1773);
-    			attr_dev(div4, "class", "svelte-1attzvl");
-    			add_location(div4, file, 58, 12, 2067);
+    			attr_dev(input2, "class", "svelte-1mfpiae");
+    			add_location(input2, file, 53, 16, 1958);
+    			attr_dev(div3, "class", "name svelte-1mfpiae");
+    			add_location(div3, file, 51, 12, 1867);
+    			attr_dev(div4, "class", "svelte-1mfpiae");
+    			add_location(div4, file, 60, 12, 2161);
     			attr_dev(p3, "for", "name");
     			attr_dev(p3, "id", "name");
-    			attr_dev(p3, "class", "svelte-1attzvl");
-    			add_location(p3, file, 68, 16, 2434);
+    			attr_dev(p3, "class", "svelte-1mfpiae");
+    			add_location(p3, file, 70, 16, 2528);
     			attr_dev(input3, "type", "text");
     			attr_dev(input3, "name", "name");
     			attr_dev(input3, "id", "nameConstant");
-    			attr_dev(input3, "class", "svelte-1attzvl");
-    			add_location(input3, file, 69, 16, 2494);
-    			attr_dev(div5, "class", "name svelte-1attzvl");
-    			add_location(div5, file, 67, 12, 2398);
-    			attr_dev(div6, "class", "svelte-1attzvl");
-    			add_location(div6, file, 76, 12, 2706);
+    			attr_dev(input3, "class", "svelte-1mfpiae");
+    			add_location(input3, file, 71, 16, 2588);
+    			attr_dev(div5, "class", "name svelte-1mfpiae");
+    			add_location(div5, file, 69, 12, 2492);
+    			attr_dev(div6, "class", "svelte-1mfpiae");
+    			add_location(div6, file, 78, 12, 2800);
     			attr_dev(p4, "for", "name");
     			attr_dev(p4, "id", "name");
-    			attr_dev(p4, "class", "svelte-1attzvl");
-    			add_location(p4, file, 88, 16, 3219);
+    			attr_dev(p4, "class", "svelte-1mfpiae");
+    			add_location(p4, file, 90, 16, 3313);
     			attr_dev(input4, "type", "text");
     			attr_dev(input4, "name", "name");
     			attr_dev(input4, "id", "nameConstant");
     			set_style(input4, "width", "7vw", 1);
-    			attr_dev(input4, "class", "svelte-1attzvl");
-    			add_location(input4, file, 89, 16, 3279);
-    			attr_dev(div7, "class", "name svelte-1attzvl");
-    			add_location(div7, file, 87, 12, 3183);
-    			attr_dev(div8, "class", "general svelte-1attzvl");
+    			attr_dev(input4, "class", "svelte-1mfpiae");
+    			add_location(input4, file, 91, 16, 3373);
+    			attr_dev(div7, "class", "name svelte-1mfpiae");
+    			add_location(div7, file, 89, 12, 3277);
+    			attr_dev(div8, "class", "general svelte-1mfpiae");
     			add_location(div8, file, 16, 8, 464);
-    			attr_dev(div9, "class", "option generalProportions svelte-1attzvl");
+    			attr_dev(div9, "class", "option generalProportions svelte-1mfpiae");
     			add_location(div9, file, 15, 4, 415);
     			attr_dev(p5, "for", "blurStrength");
     			attr_dev(p5, "id", "blurStrengthLabel");
-    			attr_dev(p5, "class", "svelte-1attzvl");
-    			add_location(p5, file, 101, 12, 3640);
+    			attr_dev(p5, "class", "svelte-1mfpiae");
+    			add_location(p5, file, 103, 12, 3734);
     			attr_dev(input5, "type", "range");
     			attr_dev(input5, "min", "1");
     			attr_dev(input5, "max", "100");
     			attr_dev(input5, "id", "blurStrength");
-    			attr_dev(input5, "class", "svelte-1attzvl");
-    			add_location(input5, file, 102, 12, 3717);
-    			attr_dev(div10, "class", "blur svelte-1attzvl");
-    			add_location(div10, file, 100, 8, 3608);
-    			attr_dev(div11, "class", "option blurProportions svelte-1attzvl");
-    			add_location(div11, file, 99, 4, 3562);
-    			attr_dev(div12, "class", "option-container svelte-1attzvl");
+    			attr_dev(input5, "class", "svelte-1mfpiae");
+    			add_location(input5, file, 104, 12, 3811);
+    			attr_dev(div10, "class", "blur svelte-1mfpiae");
+    			add_location(div10, file, 102, 8, 3702);
+    			attr_dev(div11, "class", "option blurProportions svelte-1mfpiae");
+    			add_location(div11, file, 101, 4, 3656);
+    			attr_dev(div12, "class", "option-container svelte-1mfpiae");
     			add_location(div12, file, 14, 0, 338);
     		},
     		l: function claim(nodes) {
@@ -972,46 +981,48 @@ var app = (function () {
     			append_dev(p0, strong);
     			append_dev(div8, t1);
     			append_dev(div8, div0);
+    			append_dev(div0, label);
+    			append_dev(div0, t3);
     			append_dev(div0, input0);
     			input0.checked = /*textVisible*/ ctx[5];
-    			append_dev(div8, t2);
+    			append_dev(div8, t4);
     			append_dev(div8, div1);
     			append_dev(div1, p1);
-    			append_dev(div1, t4);
+    			append_dev(div1, t6);
     			append_dev(div1, input1);
     			set_input_value(input1, /*name*/ ctx[0]);
-    			append_dev(div8, t5);
+    			append_dev(div8, t7);
     			append_dev(div8, div2);
     			if (if_block0) if_block0.m(div2, null);
-    			append_dev(div8, t6);
+    			append_dev(div8, t8);
     			append_dev(div8, div3);
     			append_dev(div3, p2);
-    			append_dev(div3, t8);
+    			append_dev(div3, t10);
     			append_dev(div3, input2);
     			set_input_value(input2, /*greeting*/ ctx[1]);
-    			append_dev(div8, t9);
+    			append_dev(div8, t11);
     			append_dev(div8, div4);
     			if (if_block1) if_block1.m(div4, null);
-    			append_dev(div8, t10);
+    			append_dev(div8, t12);
     			append_dev(div8, div5);
     			append_dev(div5, p3);
-    			append_dev(div5, t12);
+    			append_dev(div5, t14);
     			append_dev(div5, input3);
     			set_input_value(input3, /*nameConstant*/ ctx[2]);
-    			append_dev(div8, t13);
+    			append_dev(div8, t15);
     			append_dev(div8, div6);
     			if (if_block2) if_block2.m(div6, null);
-    			append_dev(div8, t14);
+    			append_dev(div8, t16);
     			append_dev(div8, div7);
     			append_dev(div7, p4);
-    			append_dev(div7, t16);
+    			append_dev(div7, t18);
     			append_dev(div7, input4);
     			set_input_value(input4, /*searchEngine*/ ctx[3]);
-    			append_dev(div12, t17);
+    			append_dev(div12, t19);
     			append_dev(div12, div11);
     			append_dev(div11, div10);
     			append_dev(div10, p5);
-    			append_dev(div10, t19);
+    			append_dev(div10, t21);
     			append_dev(div10, input5);
     			set_input_value(input5, /*blurSlider*/ ctx[4]);
     			current = true;
@@ -1151,7 +1162,7 @@ var app = (function () {
 
     	const click_handler = () => {
     		textVisible === true
-    		? root.style.setProperty("--option-general-height", "40vh")
+    		? root.style.setProperty("--option-general-height", "38vh")
     		: root.style.setProperty("--option-general-height", "80vh");
     	};
 
