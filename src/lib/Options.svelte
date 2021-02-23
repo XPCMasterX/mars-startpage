@@ -114,11 +114,15 @@
 </div>
 
 <style>
+    /* Import font */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+    /* Root Variables */
     :root {
         --option-general-height: 38vh;
     }
 
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+    /* Option container */
     .option-container {
         color: white;
         font-family: sans-serif;
@@ -149,6 +153,11 @@
         font-family: Roboto;
     }
 
+    .option-container:hover {
+        background-color: var(--hover-tint);
+    }
+
+    /* Default settings for each option */
     .option {
         /* Nice looking Shadow */
         box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -169,15 +178,20 @@
         font-size: 15px;
     }
 
-    .blurProportions {
-        height: 7vh;
-        width: 20vw;
+    /* Default Settings for text */
+    .general {
+        display: inline-block;
+        margin-left: 26px;
+        margin-top: -5px;
     }
 
-    .option-container:hover {
-        background-color: var(--hover-tint);
+    /* Container containing blur slider */
+    .blur {
+        position: relative;
+        margin-left: 20px;
     }
 
+    /* Blur Strength Slider */
     #blurStrength {
         -webkit-appearance: none;
         outline: none;
@@ -197,28 +211,7 @@
         background: #ffffff;
     }
 
-    #blurStrengthLabel {
-        display: inline-block;
-        font-size: 15px;
-        margin-left: 7px;
-    }
-
-    .blur {
-        position: relative;
-        margin-left: 20px;
-    }
-
-    .general {
-        display: inline-block;
-        margin-left: 26px;
-        margin-top: -5px;
-    }
-
-    .generalProportions {
-        height: var(--option-general-height);
-        width: 20vw;
-    }
-
+    /* Text fields */
     #nameBox {
         display: inline-block;
         background-color: transparent;
@@ -242,7 +235,25 @@
         width: 3vw;
     }
 
+    /* Label */
     #name {
         display: inline-block;
+    }
+
+    /* Proportions (change sizes here) */
+    .blurProportions {
+        height: 7vh;
+        width: 20vw;
+    }
+
+    .generalProportions {
+        height: var(--option-general-height);
+        width: 20vw;
+    }
+
+    #blurStrengthLabel {
+        display: inline-block;
+        font-size: 15px;
+        margin-left: 7px;
     }
 </style>
