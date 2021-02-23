@@ -42,7 +42,6 @@
 
     onMount(async () => {
         loadCSSOptions();
-        //document.body.style['background-image'] = 'url(./wallpaper.jpg)';
     });
 
     /* Assign config.name to name first so it doesn't say undefined and any
@@ -84,6 +83,7 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
+    /* Main Text */
     p {
         font-family: Roboto;
         font-size: var(--text-font-size);
@@ -118,6 +118,7 @@
         margin-top: 15%;
     }
 
+    /* Search bar */
     form {
         position: absolute;
         top: 50%;
@@ -125,11 +126,9 @@
         transform: translate(-50%, -50%);
         margin-top: 25%;
     }
-
     div {
         position: relative;
     }
-
     #search {
         border: none;
         outline: none;
@@ -158,6 +157,7 @@
         display: inline-block;
     }
 
+    /* Settings Icon */
     img {
         height: 32px;
         width: 32px;
@@ -166,6 +166,7 @@
         padding-top: 8px;
     }
 
+    /* Settings div around icon */
     .settings {
         /* Make it bigger than the icon */
         height: 48px;
@@ -190,11 +191,11 @@
         /* Keep this here so it darkens and lightens nicely */
         transition: 0.5s;
     }
-
     .settings:hover {
         background-color: var(--hover-tint);
     }
 
+    /* Blur Layer */
     .blur {
         position: fixed;
         top: 0;
