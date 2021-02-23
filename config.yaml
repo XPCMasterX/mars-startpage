@@ -25,8 +25,8 @@ css:
     # These are for the menus
     # Change the first seven letters to #ffffff or #000000 on each one for light mode or dark mode
     # You can have any tint though
-    blur-tint: '#ffffff3c'
-    hover-tint: '#ffffffbb'
+    blur-tint: '#0000003c'
+    hover-tint: '#00000011'
     # This is for the image background blur
     image-blur: '#00000000'
     # Blur strength for the image

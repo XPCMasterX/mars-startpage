@@ -622,8 +622,8 @@ var app = (function () {
         "gradient-end":"#00ff26",
         "text-font-size":"150px",
         "search-background-color":"#181b1e",
-        "blur-tint":"#ffffff3c",
-        "hover-tint":"#ffffffbb",
+        "blur-tint":"#0000003c",
+        "hover-tint":"#00000011",
         "image-blur":"#00000000",
         "blur-strength":"0px" } };
 
@@ -1462,10 +1462,9 @@ var app = (function () {
 
     	onMount(async () => {
     		loadCSSOptions();
-    		document.body.style["background-image"] = "url(./background.jpg)";
-    	});
+    	}); //document.body.style['background-image'] = 'url(./wallpaper.jpg)';
 
-    	/* Assign config.name to name first so it doesn't say undefined and any 
+    	/* Assign config.name to name first so it doesn't say undefined and any
     		further changes will be updated live.
     		Also autofills the textbox
     	*/

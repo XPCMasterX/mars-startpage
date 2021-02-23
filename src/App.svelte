@@ -42,10 +42,10 @@
 
     onMount(async () => {
         loadCSSOptions();
-        document.body.style['background-image'] = 'url(./background.jpg)';
+        //document.body.style['background-image'] = 'url(./wallpaper.jpg)';
     });
 
-    /* Assign config.name to name first so it doesn't say undefined and any 
+    /* Assign config.name to name first so it doesn't say undefined and any
 		further changes will be updated live.
 		Also autofills the textbox
 	*/
