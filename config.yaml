@@ -1,11 +1,11 @@
 # Your name here
 name: 'Varshith'
-# (-) is replaced by name, and there can only be one (-)
+# * is replaced by name, and there can only be one *
 # Also, if greeting is too big for your screen, you can change it in the CSS[0]
-greeting: 'Hello (-)!'
-# If you don't want to use (-) you can change that too, but you need to
-# use this instead of (-) in welcome
-nameConstant: '(-)'
+greeting: 'Hello *!'
+# If you don't want to use * you can change that too, but you need to
+# use this instead of * in welcome
+nameConstant: '*'
 # If you want to use a different search engine, specify it here
 # Options: DuckDuckGo, Google and Bing.
 # You can use a custom url, usually its https://<Search Engine Name (lowercase)>.com/search
@@ -15,8 +15,19 @@ searchEngine: 'Google'
 # Change only the ones you want to change and do not edit anything else
 css:
     # Gradient colours are the ones on the text and search bar
-    gradient-start: '#ff005d'
-    gradient-end: '#ff8b26'
+    gradient-start: '#2600ff'
+    gradient-end: '#00ff26'
     # For greeting
     text-font-size: '150px'
-    background-color: '#181b1e'
+    # For the search bar
+    # If you want the gradient to be on the text box as well, set this to an rgba value
+    search-background-color: '#181b1e'
+    # These are for the menus
+    # Change the first seven letters to #ffffff or #000000 on each one for light mode or dark mode
+    # You can have any tint though
+    blur-tint: '#0000003c'
+    hover-tint: '#00000011'
+    # This is for the image background blur
+    image-blur: '#00000000'
+    # Blur strength for the image
+    blur-strength: '0px'
